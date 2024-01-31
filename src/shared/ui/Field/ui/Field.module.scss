@@ -1,0 +1,52 @@
+.Field {
+	$p: &;
+
+	width: 100%;
+
+	&__input {
+		position: relative;
+		z-index: 1;
+
+		width: 100%;
+
+		padding: rem(20);
+
+		transition: 
+			color $primaryTransition, 
+			border $primaryTransition;
+
+		color: $greyColor;
+		border: 1px solid $lightgreyColor;
+		border-radius: rem(5);
+		background-color: #fff;
+
+		font-weight: 300;
+
+		&:focus {
+			border: 1px solid currentColor;
+		}
+	}
+
+	&_wrong {
+		#{$p} {
+			&__input {
+				border: 1px solid $wrongColor;
+			}
+
+			&__wrong {
+				margin-top: rem(15);
+			}
+		}
+		
+	}
+
+
+	&__wrong {
+		margin-top: rem(-17);
+		margin-left: rem(2);
+
+		transition: margin-top $primaryTransition;
+
+		color: $wrongColor;
+	}
+}

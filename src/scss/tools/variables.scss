@@ -1,0 +1,34 @@
+//* Vars
+$layoutColor: #fff;
+
+$primaryTextColor: #212121;
+$whiteTextColor: #fff;
+
+
+$accentColor: #D03664;
+$accentHoverColor: #AA2B51;
+$lightPurpleColor: #FFEAF1;
+$discountColor: #F99C11;
+$greyColor: #585858;
+$lightgreyColor: #C7C7C7;
+$morelightgrayColor: #E1E1E1;
+$wrongColor: #FF0000;
+
+$primaryTransition: 0.3s ease;
+$secondaryTransition: 0.2s ease;
+
+//** Fonts by default:
+$fontFamily: "Comfortaa"; //? name
+$lineHeight: 17;
+$fontSize: 15; //? size
+$fontColor: $primaryTextColor; //? color
+
+$minWidth: 320; //? min width of layout
+$containerPadding: 30; //? padding for container
+$containerWidth: container(1290); //? width container
+$containerAuthWidth: container(328); //? width container
+
+//** Break-points:
+$tablet: 991.98;
+$mobile: 767.98;
+$smallMobile: 479.98;

@@ -1,0 +1,19 @@
+.Logo {
+	$p: &;
+	display: inline-block;
+	&__icon {
+
+	}
+
+
+	&_auth {
+		#{$p} {
+			&__icon {
+				width: rem(190);
+				height: rem(43.96);
+	
+				color: $accentColor;
+			}
+		}
+	}
+}

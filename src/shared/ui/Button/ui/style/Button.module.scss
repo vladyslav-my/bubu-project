@@ -1,0 +1,51 @@
+.Button {
+   $p: &;
+
+   &_auth {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: rem(20) rem(30);
+
+
+      border-radius: rem(10);
+
+      font-weight: 700;
+
+
+
+      &_outline {
+         transition: 
+            color $primaryTransition, 
+            border $primaryTransition;
+
+         color: $accentColor;
+         border: solid 1px currentColor;
+
+         &:hover {
+            color: $accentHoverColor;
+         }
+      }
+
+      &_fill {
+         transition:
+            background $primaryTransition;
+
+         color: $whiteTextColor;
+         background-color: $accentColor;
+         &:hover {
+            background-color: $accentHoverColor;
+         }
+      }
+   }
+
+
+   &_accent {
+      color: $accentColor;
+      
+      &:hover {
+         color: $accentHoverColor;
+      }
+   }
+}

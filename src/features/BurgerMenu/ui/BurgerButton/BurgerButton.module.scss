@@ -1,0 +1,60 @@
+.BurgerButton {
+   $p: &;
+   position: relative;
+   // z-index: $zIndexBurgerMenuButton;
+
+   display: flex;
+   flex-direction: column;
+   gap: rem(6);
+
+   &::before, &::after {
+      content: "";
+      transform: rotate(0);
+      transform-origin: 3.5px 50%;
+   }
+   
+
+   &__item, &::before, &::after {
+      transition: 
+         transform $primaryTransition,
+         opacity $primaryTransition;
+
+      background: #fff;
+   }
+
+   &__item, &::before {
+      width: rem(30);
+      height: rem(2);
+   }
+
+   &::after {
+      width: rem(15);
+      height: rem(2);
+
+      transition: width $primaryTransition;
+   }
+
+
+   &_opened {
+      #{$p} {
+         &__item {
+            opacity: 0;
+         }
+      }
+
+      &::after {
+         width: rem(30);
+
+         transform: rotate(-45deg);
+         
+      }
+      &::before {
+         transform: rotate(45deg);
+         
+      }
+   }
+}
+
+.blockScroll {
+   overflow-y: hidden;
+}

@@ -1,0 +1,36 @@
+.ThreeLevelCategory {
+	position: fixed;
+	z-index: $twoLevelCatalogZIndex;
+	top: 0;
+	
+
+	display: flex;
+	overflow: auto;
+	flex-direction: column;
+
+	width: rem(266);
+	height: 100%;
+	padding: rem(115) rem(16) rem(30) rem(30);
+
+	transition: left $primaryTransition;
+
+	background-color: #fff;
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(30);
+	}
+
+	&__back {
+		margin-bottom: rem(30);
+	}
+
+	&_opened {
+		left: 0;
+	}
+
+	&_closed {
+		left: -100%;
+	}
+}

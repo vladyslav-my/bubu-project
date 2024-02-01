@@ -1,0 +1,12 @@
+.SocialNetworkList {
+	display: inline-flex;
+	align-items: center;
+
+	&_footer {
+		column-gap: em(25);
+	}
+
+	&_header {
+		column-gap: em(20);
+	}
+}

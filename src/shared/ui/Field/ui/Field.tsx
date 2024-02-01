@@ -1,23 +1,28 @@
 import {
-	ChangeEvent, FC, InputHTMLAttributes, memo,
+	ChangeEvent, FC, ForwardedRef, InputHTMLAttributes, LegacyRef, forwardRef, memo,
 } from "react";
 import { classNames as cn } from "../../../lib/classNames/classNames";
 import cls from "./Field.module.scss";
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">;
 
-interface FieldProps extends HTMLInputProps {
+export interface FieldProps extends HTMLInputProps {
 	className?: string;
 	value?: string;
 	type?: string;
 	placeholder?: string;
 	readOnly?: boolean;
 	onChange?: (value: string) => void;
-	wrong?: boolean;
-	wrongText?: string;
+	modifier?: FieldModifier;
 }
 
-export const Field: FC<FieldProps> = memo(({
+export enum FieldModifier {
+	DEFAULT = "Field_default",
+	AUTH = "Field_auth",
+	SEARCH = "Field_search",
+}
+
+export const Field: FC<FieldProps> = memo(forwardRef(({
 	className,
 	value,
 	placeholder,
@@ -25,9 +30,10 @@ export const Field: FC<FieldProps> = memo(({
 	readOnly,
 	onChange,
 	disabled,
-	wrong,
-	wrongText,
-}) => {
+	onBlur,
+	children,
+	modifier = FieldModifier.DEFAULT,
+}, ref: ForwardedRef<HTMLInputElement>) => {
 	const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		onChange?.(e.target.value);
 	};
@@ -35,8 +41,7 @@ export const Field: FC<FieldProps> = memo(({
 	return (
 		<div
 			className={cn(cls.Field, {
-				[cls.Field_wrong]: wrong,
-			}, [className])}
+			}, [className, cls[modifier]])}
 		>
 			<input
 				disabled={disabled}
@@ -45,9 +50,11 @@ export const Field: FC<FieldProps> = memo(({
 				readOnly={readOnly}
 				type={type}
 				value={value}
+				onBlur={onBlur}
+				ref={ref}
 				onChange={onChangeHandler}
 			/>
-			<p className={cls.Field__wrong}>{wrongText}</p>
+			{children}
 		</div>
 	);
-});
+}));

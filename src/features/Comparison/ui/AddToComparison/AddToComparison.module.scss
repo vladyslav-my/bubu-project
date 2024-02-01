@@ -1,0 +1,13 @@
+.AddToCart {
+	$p: &;
+	&__icon {
+		width: rem(29);
+		height: rem(19.41);
+
+		color: #fff;
+	}
+
+	&:hover {
+		color: $lightgreyColor;
+	}
+}

@@ -12,9 +12,10 @@ interface LogoProps {
 
 export enum LogoModifier {
 	AUTH = "Logo_auth",
+	HEADER = "Logo_header",
 }
 
-export const Logo: FC<LogoProps> = memo(({ className, modifier = "" }) => {
+export const Logo: FC<LogoProps> = memo(({ className, modifier = LogoModifier.HEADER }) => {
 	return (
 		<NavLink
 			className={cn(cls.Logo, {}, [className, cls[modifier]])}

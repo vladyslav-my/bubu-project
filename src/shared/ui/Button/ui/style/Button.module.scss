@@ -48,4 +48,12 @@
          color: $accentHoverColor;
       }
    }
+
+   &_clear {
+      &:hover {
+         transition: color $primaryTransition;
+
+         color: $lightgreyColor;
+      }
+   }
 }

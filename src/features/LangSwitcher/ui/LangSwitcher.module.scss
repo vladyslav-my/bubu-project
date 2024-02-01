@@ -1,0 +1,38 @@
+.LangSwitcher {
+	display: inline-flex;
+
+	text-wrap: nowrap;
+
+	font-weight: 700;
+
+		> *:not(:last-child) {
+			&:after {
+				display: inline-block;
+		
+				width: rem(1);
+				height: rem(15);
+				margin: 0 rem(9);
+		
+				content: "";
+		
+				background-color: #fff;
+			}
+		}
+
+	&__item {
+		text-transform: capitalize;
+		&_active {
+			color: #fff;
+
+			font-weight: 700;
+		}
+
+		&_noActive {
+			text-decoration: underline;
+
+			color: $lightPurpleColor2;
+
+			font-weight: 300;
+		} 
+	}
+}

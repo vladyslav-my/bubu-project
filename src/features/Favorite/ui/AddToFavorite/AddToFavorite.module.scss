@@ -1,0 +1,13 @@
+.AddToFavorite {
+	$p: &;
+	&__icon {
+		width: rem(23);
+		height: rem(19);
+
+		color: #fff;
+	}
+
+	&:hover {
+		color: $lightgreyColor;
+	}
+}

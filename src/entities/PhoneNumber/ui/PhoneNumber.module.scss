@@ -1,0 +1,12 @@
+.PhoneNumber {
+	transition: color $primaryTransition;
+	text-wrap: nowrap;
+
+	color: #fff;
+
+	font-size: rem(17);
+
+	&:hover {
+		color: $lightgreyColor;
+	}
+}

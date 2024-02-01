@@ -25,7 +25,7 @@
 }
 
 //* EM
-@function em($px, $current: $fontSize) {
+@function em($px, $current: 16) {
 	$result: math.div($px, $current) + em;
 
 	@return $result;

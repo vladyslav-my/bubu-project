@@ -1,0 +1,38 @@
+.CatalogButton {
+	display: inline-flex;
+
+	max-width: rem(234);
+
+	padding: rem(30);
+
+	border-radius: rem(20);
+	background-color: $lightPurpleColor;
+
+	gap: rem(10);
+
+	&__burger {
+		display: inline-flex;
+		flex-direction: column;
+		row-gap: rem(5);
+
+		&::before, &::after {
+			content: "";
+		}
+
+		&::before, &::after, span {
+			display: block;
+
+			width: rem(25);
+			height: rem(2);
+
+			background-color: $accentColor;
+		}
+	}
+
+	&__content {
+		text-transform: uppercase;
+
+		font-size: rem(17);
+		font-weight: 700;
+	}
+}

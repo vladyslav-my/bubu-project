@@ -1,37 +1,27 @@
 import {
-	CombinedState, Reducer, ReducersMapObject, configureStore,
+	ReducersMapObject, combineSlices, configureStore,
 } from "@reduxjs/toolkit";
+import { burgerMenuSlice } from "@/features/BurgerMenu";
+import { catalogSpoilerSlice } from "@/features/Catalog";
+import { orderSearchSlice } from "@/features/OrderSearch";
 import { $api } from "@/shared/api/api";
 import { rtkApi } from "@/shared/api/rtkApi";
-import { createReducerManager } from "./reducerManager";
-import { ExtraArgumentType, StateSchema } from "./StateSchema";
+import { ExtraArgumentType } from "./StateSchema";
 
-export const createReduxStore = (
-	initialState?: StateSchema,
-	asyncReducers?: ReducersMapObject<StateSchema>,
-) => {
-	const rootReducers: ReducersMapObject<StateSchema> = {
-		...asyncReducers,
-		[rtkApi.reducerPath]: rtkApi.reducer,
-	};
+export const createReduxStore = () => {
+	const rootReducer = combineSlices(catalogSpoilerSlice, burgerMenuSlice, orderSearchSlice);
 
-	const extraArgument: ExtraArgumentType = {
-		api: $api,
-	};
-
-	const reducerManager = createReducerManager(rootReducers);
+	// const extraArgument: ExtraArgumentType = {
+	// 	api: $api,
+	// };
 
 	const store = configureStore({
-		reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
+		reducer: rootReducer,
 		devTools: __IS_DEV__,
-		preloadedState: initialState,
-		middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-			thunk: { extraArgument },
-		}).concat(rtkApi.middleware),
+		// middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+		// 	thunk: { extraArgument },
+		// }).concat(rtkApi.middleware),
 	});
-
-	// @ts-ignore
-	store.reducerManager = reducerManager;
 
 	return store;
 };

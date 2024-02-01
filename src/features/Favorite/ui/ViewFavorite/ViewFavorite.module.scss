@@ -1,0 +1,26 @@
+.ViewFavorite {
+	$p: &;
+
+	display: inline-flex;
+	align-items: center;
+
+	transition: color $primaryTransition;
+
+	color: #fff;
+	column-gap: rem(7);
+
+	&__icon {
+		width: rem(23);
+		height: rem(19);
+
+		
+	}
+
+	&__counter {
+		font-weight: 700;
+	}
+
+	&:hover {
+		color: $lightgreyColor;
+	}
+}

@@ -1,4 +1,7 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { Header } from "@/widgets/Header";
+import { CatalogSpoiler, catalogSpoilerSelectors } from "@/features/Catalog";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import cls from "./MainPage.module.scss";
 
@@ -8,8 +11,9 @@ interface MainPageProps {
 
 export const MainPage: FC<MainPageProps> = ({ className }) => {
 	return (
-		<div className={cn(cls.MainPage, {}, [className])}>
-			Main Page
-		</div>
+		<>
+			<Header />
+			1
+		</>
 	);
 };

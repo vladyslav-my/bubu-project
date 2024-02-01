@@ -1,1 +1,1 @@
-export { Auth } from "./ui/Auth";
+export { ToPersonalAccount } from "./ui/ToPersonalAccount/ToPersonalAccount";

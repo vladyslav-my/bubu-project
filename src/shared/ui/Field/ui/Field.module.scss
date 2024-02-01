@@ -9,21 +9,80 @@
 
 		width: 100%;
 
-		padding: rem(20);
-
 		transition: 
 			color $primaryTransition, 
 			border $primaryTransition;
 
-		color: $greyColor;
-		border: 1px solid $lightgreyColor;
+		
 		border-radius: rem(5);
-		background-color: #fff;
+		
 
 		font-weight: 300;
 
-		&:focus {
-			border: 1px solid currentColor;
+		
+	}
+
+	&_auth {
+		#{$p} {
+			&__input {
+				padding: rem(20);
+
+				color: $greyColor;
+				border: 1px solid $lightgreyColor;
+				background-color: #fff;
+
+				&:focus {
+					border: 1px solid currentColor;
+				}
+			}
+		}
+	}
+
+	&_default {
+		
+		#{$p} {
+			&__input {
+				padding: rem(15);
+
+				color: #fff;
+				border: 1px solid currentColor;
+				background: rgba(255, 255, 255, 0.15);
+
+				&:focus {
+					border: 1px solid $lightgreyColor;
+				}
+			}
+		}
+	}
+
+	&_search {
+		position: relative;
+
+		color: #fff;
+		#{$p} {
+			&__input {
+				padding: rem(15) rem(30) rem(15) rem(15);
+
+				
+				border: 1px solid currentColor;
+				background: rgba(255, 255, 255, 0.15);
+				
+				&:focus {
+					border: 1px solid $lightgreyColor;
+				}
+			}
+
+			&__searchIcon {
+				position: absolute;
+				top: 50%;
+				right: rem(15);
+
+				width: rem(15);
+				height: rem(15.55);
+
+				transform: translateY(-50%);
+
+			}
 		}
 	}
 

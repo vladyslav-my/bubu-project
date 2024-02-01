@@ -1,0 +1,44 @@
+.BurgerButton {
+   $p: &;
+   position: relative;
+
+   display: flex;
+   flex-direction: column;
+   gap: rem(5);
+
+   &::before, &::after {
+      content: "";
+      transform: rotate(0);
+      transform-origin: 2.5px 50%;
+   }
+   
+
+   &__item, &::before, &::after {
+      width: rem(25);
+      height: rem(2);
+
+      transition: 
+         transform $primaryTransition,
+         opacity $primaryTransition;
+
+      background: $accentColor;
+   }
+
+
+   &_opened {
+      #{$p} {
+         &__item {
+            opacity: 0;
+         }
+      }
+
+      &::after {
+         transform: rotate(-45deg);
+         
+      }
+      &::before {
+         transform: rotate(45deg);
+         
+      }
+   }
+}

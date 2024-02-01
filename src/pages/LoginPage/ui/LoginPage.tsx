@@ -5,7 +5,7 @@ import { getRegisterRoutePath } from "@/shared/config/routes/path";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { Button, NavLinkButton, ButtonModifier } from "@/shared/ui/Button";
 import { Container, ContainerModifier } from "@/shared/ui/Container";
-import { Field } from "@/shared/ui/Field";
+import { AuthField, Field } from "@/shared/ui/Field";
 import { Logo, LogoModifier } from "@/shared/ui/Logo";
 import FacebookIcon from "../assets/facebook.svg";
 import GoogleIcon from "../assets/google.svg";
@@ -22,8 +22,8 @@ export const LoginPage: FC<LoginPageProps> = ({ className }) => {
 				<Logo className={cls.LoginPage__logo} modifier={LogoModifier.AUTH} />
 				<form className={cls.LoginPage__form} action="">
 					<h2 className={cls.LoginPage__title}>Вхід</h2>
-					<Field placeholder="Телефон або e-mail" wrongText="помилка" />
-					<Field placeholder="Пароль" wrongText="помилка" />
+					<AuthField placeholder="Телефон або e-mail" wrongText="помилка" />
+					<AuthField placeholder="Пароль" wrongText="помилка" />
 					<NavLinkButton to={getRegisterRoutePath()} modifier={ButtonModifier.ACCENT}>
 						Забули пароль?
 					</NavLinkButton>

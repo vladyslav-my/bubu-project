@@ -1,0 +1,44 @@
+.OneLevelMenu {
+	position: fixed;
+	z-index: $oneLevelMenuZIndex;
+	top: 0;
+	left: 0;
+
+	display: flex;
+	overflow: auto;
+	flex-direction: column;
+
+	width: rem(266);
+
+	height: 100%;
+	padding: rem(115) rem(16) rem(30) rem(30);
+
+	transition: left $primaryTransition;
+
+	background-color: $accentColor;
+	gap: rem(40);
+
+	&__lineDecoration {
+		flex: 0 0 auto;
+
+		width: 100%;
+		height: 1px;
+
+		background-color: $lightPurpleColor2;
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		gap: rem(30);
+	}
+
+	&_opened {
+		left: 0;
+	}
+
+	&_closed {
+		left: -100%;
+	}
+
+}

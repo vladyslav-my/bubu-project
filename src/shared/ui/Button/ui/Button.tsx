@@ -11,6 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	children?: ReactNode;
 	modifier?: ButtonModifier;
 	secondaryModifier?: ButtonModifier;
+	onClick: any;
 }
 
 export const Button: FC<ButtonProps> = memo(({
@@ -19,10 +20,11 @@ export const Button: FC<ButtonProps> = memo(({
 	modifier = "",
 	type,
 	secondaryModifier = "",
+	onClick,
 	...otherProps
 }) => {
 	return (
-		<button className={cn(cls.Button, {}, [className, cls[modifier], cls[secondaryModifier]])} type={type} {...otherProps}>
+		<button className={cn(cls.Button, {}, [className, cls[modifier], cls[secondaryModifier]])} type={type} onClick={onClick} {...otherProps}>
 			{children}
 		</button>
 	);

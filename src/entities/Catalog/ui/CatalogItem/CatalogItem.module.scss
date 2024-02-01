@@ -1,0 +1,7 @@
+.CatalogItem {
+	&__button {
+		display: inline-flex;
+		align-items: center;
+		column-gap: rem(10);
+	}
+}

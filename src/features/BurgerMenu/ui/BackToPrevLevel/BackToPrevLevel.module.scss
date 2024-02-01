@@ -1,0 +1,10 @@
+.BackToPrevLevel {
+	display: inline-flex;
+	align-items: center;
+	column-gap: rem(10);
+
+	&__content {
+		font-size: rem(17);
+		font-weight: 500;
+	}
+}

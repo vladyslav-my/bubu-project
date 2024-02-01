@@ -1,0 +1,76 @@
+
+.CatalogSpoiler {
+	$p: &;
+	position: relative;
+
+	width: rem(234);
+	height: rem(76);
+
+	&__this {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		overflow: hidden;
+	
+		width: rem(234);
+		padding: rem(30);
+	
+		border-radius: rem(20);
+		background-color: $lightPurpleColor;
+	}
+
+	
+	&__list {
+		display: flex;
+		overflow: hidden;
+		flex-direction: column;
+
+		width: 100%;
+
+		transition: height $primaryTransition, padding-top $primaryTransition;
+
+		row-gap: rem(30);
+	}
+
+	&__shell {
+		display: flex;
+		align-items: center;
+		column-gap: rem(10);
+
+		transition: margin-bottom $primaryTransition;
+	}
+
+	&__title {
+		text-transform: uppercase;
+
+		font-size: rem(17);
+		font-weight: 700;
+	}
+
+	&_opened {
+		#{$p} {
+			&__shell {
+				margin-bottom: rem(30);
+			}
+
+			&__list {
+				padding-top: rem(30);
+
+				border-top: solid 1px $morelightgrayColor;
+			}
+		}
+	}
+
+	&_closed {
+		#{$p} {
+			&__shell {
+				margin-bottom: 0;
+			}
+
+			&__list {
+				padding-top: 0;
+			}
+		}
+	}
+}

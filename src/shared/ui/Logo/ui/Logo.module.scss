@@ -1,6 +1,6 @@
 .Logo {
 	$p: &;
-	display: inline-block;
+
 	&__icon {
 
 	}
@@ -13,6 +13,23 @@
 				height: rem(43.96);
 	
 				color: $accentColor;
+			}
+		}
+	}
+
+	&_header {
+		#{$p} {
+			&__icon {
+				color: #fff;
+				@media (min-width: em($mobile)) {
+					width: rem(138);
+					height: rem(32);
+				}
+
+				@media (max-width: em($mobile)) {
+					width: rem(90);
+					height: rem(20);
+				}
 			}
 		}
 	}

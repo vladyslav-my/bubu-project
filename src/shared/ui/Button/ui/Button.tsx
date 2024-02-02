@@ -11,7 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	children?: ReactNode;
 	modifier?: ButtonModifier;
 	secondaryModifier?: ButtonModifier;
-	onClick: any;
+	onClick?: any;
 }
 
 export const Button: FC<ButtonProps> = memo(({

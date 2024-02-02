@@ -46,11 +46,11 @@
 		display: flex;
 		align-items: center;
 		
-		@media (min-width: em($containerWidth)) {
+		@media (min-width: em($maxWidthContainer)) {
 			column-gap: rem(30);
 		}
 
-		@media (max-width: em($containerWidth)) {
+		@media (max-width: em($maxWidthContainer)) {
 			column-gap: rem(20);
 		}
 	}
@@ -60,7 +60,7 @@
 
 	&__nav {
 		margin-right: auto;
-		@media (max-width: em($containerWidth)) and (min-width: em($tablet)) {
+		@media (max-width: em($maxWidthContainer)) and (min-width: em($tablet)) {
 			font-size: rem(14);
 		}
 	}

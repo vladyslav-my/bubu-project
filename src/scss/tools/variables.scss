@@ -33,7 +33,7 @@ $fontColor: $primaryTextColor; //? color
 
 $minWidth: 320; //? min width of layout
 $containerPadding: 30; //? padding for container
-$containerWidth: container(1290); //? width container
+$maxWidthContainer: container(1290); //? width container
 $containerAuthWidth: container(328); //? width container
 
 //** Break-points:

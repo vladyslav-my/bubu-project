@@ -1,0 +1,17 @@
+.Address {
+	&__list {
+		display: inline-flex;
+		flex-direction: column;
+		row-gap: rem(15);
+	}
+
+	&_shell {
+		max-width: rem(300);
+		padding: rem(30);
+
+		border-radius: rem(20);
+
+		background-color: $accentHoverColor;
+
+	}
+}

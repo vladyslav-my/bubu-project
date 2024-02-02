@@ -17,4 +17,9 @@ export const navModel = [
 		name: "Повернення і обмін",
 		to: getMainRoutePath(),
 	},
+	{
+		isFooter: true,
+		name: "Політика конфеденційності",
+		to: getMainRoutePath(),
+	},
 ];

@@ -45,7 +45,7 @@ export const Field: FC<FieldProps> = memo(forwardRef(({
 		>
 			<input
 				disabled={disabled}
-				className={cn(cls.Field__input, {}, [className])}
+				className={cn(cls.Field__input, {}, [])}
 				placeholder={placeholder}
 				readOnly={readOnly}
 				type={type}

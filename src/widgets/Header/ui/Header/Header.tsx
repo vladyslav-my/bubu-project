@@ -47,7 +47,7 @@ export const Header: FC<HeaderProps> = memo(({ className }) => {
 
 	return (
 		<>
-			<div className={cn(cls.Header, {}, [className])}>
+			<header className={cn(cls.Header, {}, [className])}>
 				<Container className={cls.Header__container}>
 					<HeaderTop />
 					<div className={cls.Header__main}>
@@ -58,7 +58,7 @@ export const Header: FC<HeaderProps> = memo(({ className }) => {
 					</div>
 					{isVisibleSearchField && <OrderSearchField />}
 				</Container>
-			</div>
+			</header>
 			<OverlayBurgerMenu />
 		</>
 

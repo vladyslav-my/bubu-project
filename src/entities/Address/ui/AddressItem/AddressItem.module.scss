@@ -1,0 +1,34 @@
+.AddressItem {
+	$p: &;
+
+
+	&__link {
+		transition: color $primaryTransition;
+	
+		color: #fff;
+
+		font-weight: 300;
+	
+	
+		&:hover {
+			color: $lightgreyColor;
+		}
+	}
+
+	&_bold {
+		#{$p} {
+			&__link {
+				font-size: rem(17);
+				font-weight: 700;
+			}
+		}
+	}
+
+	&_underline {
+		#{$p} {
+			&__link {
+				text-decoration: underline;
+			}
+		}
+	}
+}

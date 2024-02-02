@@ -1,0 +1,52 @@
+.SendToEmailPromo {
+	$p: &;
+	
+	display: grid;
+	grid-auto-flow: column;
+
+	align-items: center;
+	column-gap: rem(15);
+
+	&__button {
+		display: flex;
+		align-items: center;
+		flex: 0 0 auto;
+		justify-content: center;
+
+		width: rem(48);
+		height: rem(48);
+
+		transition: color $primaryTransition;
+
+		border-radius: 50%;
+
+		background-color: #fff;
+
+		&:hover {
+			color: $lightgreyColor;
+			#{$p} {
+				&__icon {
+					color: $accentHoverColor;
+				}
+			}
+		}
+	}
+
+	&__field {
+	}
+
+	&__icon {
+		transition: color $primaryTransition;
+
+		color: $accentColor;
+	}
+
+	
+	@media (max-width: em($mobile)) {
+		grid-template-columns: rem(265) auto;
+	}
+
+	@media (min-width: em($mobile)) {
+		grid-template-columns: rem(300) auto;
+	}
+}

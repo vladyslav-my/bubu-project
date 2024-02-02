@@ -6,7 +6,7 @@ import cls from "./CatalogItem.module.scss";
 interface CatalogItemLinkProps {
 	className?: string;
 	name: string;
-	Icon: FC<React.SVGProps<SVGSVGElement>>;
+	Icon?: FC<React.SVGProps<SVGSVGElement>>;
 	to: string;
 }
 
@@ -16,7 +16,7 @@ export const CatalogItemLink: FC<CatalogItemLinkProps> = ({
 	return (
 		<li className={cn(cls.CatalogItem, {}, [className])}>
 			<NavLinkButton className={cls.CatalogItem__button} to={to}>
-				<Icon />
+				{Icon && <Icon />}
 				{name}
 			</NavLinkButton>
 		</li>

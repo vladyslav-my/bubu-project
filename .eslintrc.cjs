@@ -28,9 +28,12 @@ const overwritedAirbnbRules = {
 		},
 	],
 	"react-hooks/exhaustive-deps": [1],
+	"react/jsx-one-expression-per-line": [0],
+	"no-plusplus": [0],
 };
 
 const temporarilyDisabled = {
+	"jsx-a11y/no-noninteractive-element-interactions": [0],
 	"@typescript-eslint/no-unused-vars": [0],
 	"max-len": [0],
 	"react/button-has-type": [0],

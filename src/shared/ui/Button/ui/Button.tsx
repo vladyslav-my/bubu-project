@@ -6,7 +6,7 @@ import { classNames as cn } from "../../../lib/classNames/classNames";
 import cls from "./style/Button.module.scss";
 import { ButtonModifier } from "./style/ButtonModifier";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
 	children?: ReactNode;
 	modifier?: ButtonModifier;

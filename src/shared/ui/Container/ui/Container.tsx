@@ -11,6 +11,7 @@ interface ContainerProps {
 export enum ContainerModifier {
 	DEFAULT = "Container_default",
 	AUTH = "Container_auth",
+	ABOUT = "Container_about",
 }
 
 export const Container: FC<ContainerProps> = ({ className, children, modifier = ContainerModifier.DEFAULT }) => {

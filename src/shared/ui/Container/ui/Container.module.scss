@@ -10,6 +10,10 @@
 	}
 
 	&_auth {
-		max-width: rem($containerAuthWidth);
+		max-width: rem($authWidthContainer);
+	}
+
+	&_about {
+		max-width: rem($aboutWidthContainer);
 	}
 }

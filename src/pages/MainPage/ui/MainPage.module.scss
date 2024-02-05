@@ -6,6 +6,11 @@
 
 	&__main {
 		flex: 1 1 auto;
+
+		& > * {
+			margin-bottom: rem(80);
+		}
+		
 	}
 
 	&__header {
@@ -16,4 +21,24 @@
 
 	}
 
+	&__welcomeCarrousel {
+		margin-left: rem(262);
+	}
+
 }
+
+.Сarrousel {
+	overflow: hidden;
+
+	&__list {
+		display: flex;
+
+		transition: transform $primaryTransition;
+		gap: rem(30);
+	}
+
+	&__item {
+		// transform: translate(px);
+	}
+}
+

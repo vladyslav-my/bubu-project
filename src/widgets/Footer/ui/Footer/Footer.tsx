@@ -11,8 +11,8 @@ import { paymentModel } from "@/entities/Payment";
 import { Devices } from "@/shared/const/devices";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { Container } from "@/shared/ui/Container";
+import { Title } from "@/shared/ui/Title";
 import BabyImage from "../../assets/baby.png";
-import { Title } from "../Title/Title";
 import cls from "./Footer.module.scss";
 
 interface FooterProps {

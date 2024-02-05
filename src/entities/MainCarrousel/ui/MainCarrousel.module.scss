@@ -1,0 +1,85 @@
+.MainCarrousel {
+	position: relative;
+
+	&__carrouselList {
+		display: flex;
+		overflow-x: auto;
+
+		border-radius: rem(20);
+
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+  		scrollbar-width: none;
+	}
+
+	&__carrouselItem {
+		scroll-snap-align: start;
+
+		position: relative;
+
+
+		min-width: 100%;
+		padding-bottom: percent(568, 1028);
+	}
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+		
+
+		border-radius: rem(10);
+		object-fit: cover;
+	}
+
+	&__buttonLeft {
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: rem(20);
+	}
+
+	&__buttonRight {
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		right: rem(20);
+	}
+
+	&__dotsList {
+		position: absolute;
+		z-index: 1;
+		bottom: rem(20);
+		left: 50%;
+
+		display: inline-flex;
+		align-items: center;
+		column-gap: rem(10);
+	}
+
+	&__dotItem {
+		width: rem(11.38);
+		height: rem(11.36);
+
+		transition:
+			width $primaryTransition,
+			height $primaryTransition,
+			opacity $primaryTransition;
+
+		opacity: 0.75;
+		border-radius: 50%;
+
+		background-color: #fff;
+
+		&_active {
+			width: rem(13);
+			height: rem(13);
+
+			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+			
+		}
+	}
+}

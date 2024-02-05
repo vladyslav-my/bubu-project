@@ -1,10 +1,10 @@
-import { FC } from "react";
-import { classNames as cn } from "@/shared/lib/classNames/classNames";
+import { FC, ReactNode } from "react";
+import { classNames as cn } from "../../../lib/classNames/classNames";
 import cls from "./Title.module.scss";
 
 interface TitleProps {
 	className?: string;
-	children: string;
+	children: ReactNode;
 }
 
 export const Title: FC<TitleProps> = ({ className, children }) => {

@@ -1,0 +1,68 @@
+.PopularCategorySection {
+	&__list {
+		display: grid;
+		
+		gap: rem(30);
+
+
+
+		@media (min-width: em(1300)) {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(2, rem(190));
+
+			grid-template-areas:
+			"zero one five three"
+			"zero two five four";
+		}
+
+		@media (max-width: em(1300)) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(4, rem(190));
+
+			grid-template-areas:
+				"zero one"
+				"zero two"
+				"three five"
+				"four five";
+		}
+
+		@media (max-width: em($mobile)) {
+			grid-template-columns: 1fr;
+			grid-auto-rows: rem(180);
+
+			grid-template-areas:
+				"zero"
+				"one"
+				"two"
+				"three"
+				"four"
+				"five";
+		}
+	}
+
+	&__item {
+		&_0 {
+			grid-area: zero;
+		}
+
+		&_1 {
+			grid-area: one;
+		}
+
+		&_2 {
+			grid-area: two;
+		}
+
+		&_3 {
+			grid-area: three;
+		}
+
+		&_4 {
+			grid-area: four;
+		}
+
+		&_5 {
+			grid-area: five;
+		}
+	}
+}

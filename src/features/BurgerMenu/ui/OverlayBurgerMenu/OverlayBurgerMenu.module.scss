@@ -1,5 +1,6 @@
 .OverlayBurgerMenu {
 	position: fixed;
+	z-index: $overlayZindex;
 
 	width: 100%;
 	height: 100%;

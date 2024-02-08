@@ -26,6 +26,8 @@
 		overflow: hidden;
 		flex-direction: column;
 
+		box-sizing: content-box;
+
 		width: 100%;
 
 		transition: height $primaryTransition, padding-top $primaryTransition;
@@ -45,7 +47,7 @@
 		text-transform: uppercase;
 
 		font-size: rem(17);
-		font-weight: 700;
+		font-weight: 500;
 	}
 
 	&_opened {
@@ -55,6 +57,7 @@
 			}
 
 			&__list {
+				height: auto;
 				padding-top: rem(30);
 
 				border-top: solid 1px $morelightgrayColor;
@@ -69,6 +72,7 @@
 			}
 
 			&__list {
+				height: 0;
 				padding-top: 0;
 			}
 		}

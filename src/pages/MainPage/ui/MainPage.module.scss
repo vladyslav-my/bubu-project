@@ -1,44 +1,8 @@
 .MainPage {
-	display: flex;
-	flex-direction: column;
-
-	height: 100%;
-
-	&__main {
-		flex: 1 1 auto;
-
-		& > * {
-			margin-bottom: rem(80);
-		}
-		
+	
+	> *:not(:last-child) {
+		margin-bottom: rem(80);
 	}
 
-	&__header {
-
-	}
-
-	&__footer {
-
-	}
-
-	&__welcomeCarrousel {
-		margin-left: rem(262);
-	}
 
 }
-
-.Сarrousel {
-	overflow: hidden;
-
-	&__list {
-		display: flex;
-
-		transition: transform $primaryTransition;
-		gap: rem(30);
-	}
-
-	&__item {
-		// transform: translate(px);
-	}
-}
-

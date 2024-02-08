@@ -6,14 +6,12 @@
       align-items: center;
       justify-content: center;
 
-      padding: rem(20) rem(30);
-
+      padding: rem(20) rem(20);
 
       border-radius: rem(10);
+      column-gap: rem(5);
 
       font-weight: 700;
-
-
 
       &_outline {
          transition: 
@@ -28,6 +26,7 @@
          }
       }
 
+
       &_fill {
          transition:
             background $primaryTransition;
@@ -40,6 +39,57 @@
       }
    }
 
+   &_filter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: rem(20) rem(20);
+
+      text-wrap: nowrap;
+
+      border-radius: rem(5);
+      
+
+      font-weight: 700;
+
+      &_fill {
+         column-gap: rem(5);
+
+         transition:
+         background $primaryTransition;
+
+         color: $whiteTextColor;
+         background-color: $accentColor;
+         &:hover {
+            background-color: $accentHoverColor;
+         }
+      }
+
+      &_remove {
+         column-gap: rem(10);
+
+         border: solid 1px $morelightgrayColor;
+         #{$p} {
+            &__icon {
+               order: 1;
+            }
+         }
+      }
+
+      &_outline {
+         transition: 
+         color $primaryTransition, 
+         border $primaryTransition;
+
+         color: $accentColor;
+         border: solid 1px currentColor;
+
+         &:hover {
+            color: $accentHoverColor;
+         }
+      }
+   }
 
    &_accent {
       color: $accentColor;
@@ -50,10 +100,70 @@
    }
 
    &_clear {
+      transition: color $primaryTransition;
       &:hover {
-         transition: color $primaryTransition;
-
          color: $lightgreyColor;
+      }
+   }
+
+
+   &_underline {
+      transition: color $primaryTransition;
+      text-decoration: underline;
+
+      color: $accentColor;
+
+      font-weight: 700;
+      &:hover {
+         color: $accentHoverColor;
+      }
+   }
+
+   &_sort {
+      transition: color $primaryTransition;
+
+      font-weight: 300;
+
+      &_active {
+         color: #000;
+      }
+
+      &_nonActive {
+         text-decoration: underline;
+
+         color: $greyColor;
+      }
+   }
+
+   &_category {
+      transition: font-weight $primaryTransition;
+      
+      &_active {
+         font-weight: 700;
+      }
+
+      &_nonActive {
+         font-weight: 300;
+      }
+   }
+
+
+   &_circle {
+      width: rem(41);
+      height: rem(41);
+
+      border: 1px solid $morelightgrayColor;
+      border-radius: 50%;
+
+      font-size: rem(17);
+      font-weight: 500;
+
+      &_active {
+         border: 1px solid $accentColor;
+      }
+
+      &:hover {
+         border: 1px solid $accentHoverColor;
       }
    }
 }

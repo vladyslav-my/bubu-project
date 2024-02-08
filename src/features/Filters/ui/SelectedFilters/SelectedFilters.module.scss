@@ -1,0 +1,21 @@
+.SelectedFilters {
+	&__list {
+		display: flex;
+		column-gap: rem(20);
+
+		overflow-x: auto;
+
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+  		scrollbar-width: none;
+
+		
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		& > * {
+			flex: 0 0 auto;
+			scroll-snap-align: start;
+		}
+	}
+}

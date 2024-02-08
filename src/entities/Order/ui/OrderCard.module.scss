@@ -29,6 +29,8 @@
 	}
 
 	&:hover {
+		z-index: 11;
+
 		overflow: visible;
 		&::before {
 			box-shadow: inset 0 0 rem(10) rem(2) rgba(0, 0, 0, 0.05);
@@ -121,11 +123,11 @@
 
 	
 
-	@media (min-width: em($tablet)) {
-		width: rem(234);
-	}
+	// @media (min-width: em($tablet)) {
+	// 	width: rem(234);
+	// }
 
-	@media (max-width: em($tablet)) {
-		width: rem(156);
-	}
+	// @media (max-width: em($tablet)) {
+	// 	width: rem(156);
+	// }
 }

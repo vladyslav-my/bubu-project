@@ -8,16 +8,13 @@ interface BurgerButtonProps {
 	className?: string;
 	setIsOpen: any;
 	isOpen: boolean;
+	onClick: () => void;
 }
 
-export const BurgerButton: FC<BurgerButtonProps> = memo(({ className, setIsOpen, isOpen }) => {
-	const onClickHandler = useCallback(() => {
-		setIsOpen((prev: boolean) => !prev);
-	}, []);
-
+export const BurgerButton: FC<BurgerButtonProps> = memo(({ className, onClick, isOpen }) => {
 	return (
 		<button
-			onClick={onClickHandler}
+			onClick={onClick}
 			className={classNames(cls.BurgerButton, {
 				[cls.BurgerButton_opened]: isOpen,
 			}, [className])}

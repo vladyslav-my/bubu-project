@@ -1,4 +1,9 @@
 .PopularCategorySection {
+
+	&__title {
+		margin-bottom: rem(30);
+	}
+
 	&__list {
 		display: grid;
 		

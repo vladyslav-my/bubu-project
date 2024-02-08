@@ -36,17 +36,19 @@
 	}
 
 	&__buttonLeft {
-		position: absolute;
-		z-index: 1;
-		top: 50%;
 		left: rem(20);
 	}
 
 	&__buttonRight {
+		right: rem(20);
+	}
+
+	&__buttonLeft, &__buttonRight {
 		position: absolute;
 		z-index: 1;
 		top: 50%;
-		right: rem(20);
+
+		transform: translateY(-50%);
 	}
 
 	&__dotsList {
@@ -57,6 +59,8 @@
 
 		display: inline-flex;
 		align-items: center;
+
+		transform: translateX(-50%);
 		column-gap: rem(10);
 	}
 
@@ -79,7 +83,6 @@
 			height: rem(13);
 
 			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
-			
 		}
 	}
 }

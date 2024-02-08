@@ -1,0 +1,3 @@
+interface FiltersMenuSchema {
+	isOpen: boolean;
+}

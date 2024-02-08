@@ -101,8 +101,8 @@ export const MainCarrousel: FC<MainCarrouselProps> = memo(({
 		<div className={cn(cls.MainCarrousel, {
 		}, [className])}
 		>
-			{isShowLeftButton && <ArrowButton circle className={cls.MainCarrousel__buttonLeft} onClick={onClickHandlerLeft} left />}
-			{isShowRightButton && <ArrowButton circle className={cls.MainCarrousel__buttonRight} onClick={onClickHandlerRight} />}
+			{isShowLeftButton && <ArrowButton outline className={cls.MainCarrousel__buttonLeft} onClick={onClickHandlerLeft} left />}
+			{isShowRightButton && <ArrowButton outline className={cls.MainCarrousel__buttonRight} onClick={onClickHandlerRight} />}
 			<ul ref={listRef} className={cls.MainCarrousel__carrouselList} onScroll={onScrollHandler}>
 				{/* {children} */}
 				<li className={cls.MainCarrousel__carrouselItem}>

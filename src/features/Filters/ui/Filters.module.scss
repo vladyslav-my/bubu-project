@@ -1,1 +1,64 @@
-style
+.Filters {
+	$p: &;
+
+	background-color: #fff;
+
+	&__this {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(30);
+		> *:not(:last-child) {
+			padding-bottom: rem(30);
+	
+			border-bottom: 1px solid $morelightgrayColor;
+		}
+	}
+	&_menu {
+		position: fixed;
+		z-index: $filtersZIndex;
+		top: 0;
+		left: -100%;
+
+		width: rem(294);
+		height: 100%;
+
+		transition: left $primaryTransition;
+
+		&_open {
+			left: 0;
+		}
+
+		#{$p} {
+			&__this {
+				overflow: auto;
+
+				height: 100%;
+				padding: rem(30) rem(30) rem(77) rem(30);
+			}
+		}
+		
+
+		@media (max-width: em($mobile)) {
+			padding-top: rem(60);
+		}
+
+		@media (min-width: em($mobile)) {
+			padding-top: rem(85);
+		}
+	}
+
+	&__wrapper {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		width: 100%;
+		padding: rem(10);
+
+		background-color: #fff;
+	}
+
+	&__applyFiltersButton {
+		width: 100%;
+	}
+}

@@ -8,6 +8,10 @@
 		color: #fff;
 
 		font-weight: 300;
+
+		> *:not(:last-child) {
+			margin-bottom: rem(5);
+		}
 	
 	
 		&:hover {
@@ -18,7 +22,7 @@
 	&_bold {
 		#{$p} {
 			&__link {
-				font-size: rem(17);
+				font-size: rem(20);
 				font-weight: 700;
 			}
 		}

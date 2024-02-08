@@ -1,0 +1,13 @@
+.WelcomeCarrouselSection {
+	&__carrousel {
+		margin-left: 0;
+
+		transition: margin-left 0.05s linear;
+
+		&_ml {
+			@media (min-width: em($tablet)) {
+				margin-left: rem(262);
+			}
+		}
+	}
+}

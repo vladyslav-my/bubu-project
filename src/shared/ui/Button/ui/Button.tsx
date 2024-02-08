@@ -12,6 +12,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	modifier?: ButtonModifier;
 	secondaryModifier?: ButtonModifier;
 	onClick?: any;
+	Icon?: React.FC<React.SVGProps<SVGSVGElement>>
 }
 
 export const Button: FC<ButtonProps> = memo(({
@@ -21,10 +22,17 @@ export const Button: FC<ButtonProps> = memo(({
 	type,
 	secondaryModifier = "",
 	onClick,
+	Icon,
 	...otherProps
 }) => {
 	return (
-		<button className={cn(cls.Button, {}, [className, cls[modifier], cls[secondaryModifier]])} type={type} onClick={onClick} {...otherProps}>
+		<button
+			className={cn(cls.Button, {}, [className, cls[modifier], cls[secondaryModifier]])}
+			type={type}
+			onClick={onClick}
+			{...otherProps}
+		>
+			{Icon && <Icon className={cls.Button__icon} />}
 			{children}
 		</button>
 	);

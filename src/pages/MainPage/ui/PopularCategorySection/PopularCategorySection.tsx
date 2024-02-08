@@ -2,6 +2,7 @@ import { FC, useMemo } from "react";
 import { popularCategoryModel, PopularCategoryItem } from "@/entities/PopularCategory";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { Container } from "@/shared/ui/Container";
+import { Title } from "@/shared/ui/Title";
 import cls from "./PopularCategorySection.module.scss";
 
 interface PopularCategorySectionProps {
@@ -33,6 +34,9 @@ export const PopularCategorySection: FC<PopularCategorySectionProps> = ({ classN
 	return (
 		<section className={cn(cls.PopularCategorySection, {}, [className])}>
 			<Container>
+				<Title className={cls.PopularCategorySection__title}>
+					Популярні Категорії
+				</Title>
 				<ul className={cls.PopularCategorySection__list}>
 					{popularCategoryItems}
 				</ul>

@@ -18,7 +18,7 @@ export const OrderCard: FC<OrderCardProps> = ({
 	className, src, alt, title, slotActions, price, discountPrice, discountPercent,
 }) => {
 	return (
-		<div className={cn(cls.OrderCard, {
+		<li className={cn(cls.OrderCard, {
 			[cls.OrderCard_priceThrought]: !!discountPrice,
 		}, [className])}
 		>
@@ -39,6 +39,6 @@ export const OrderCard: FC<OrderCardProps> = ({
 				{slotActions}
 				<Button modifier={ButtonModifier.AUTH} secondaryModifier={ButtonModifier.AUTHFILL}>test</Button>
 			</div>
-		</div>
+		</li>
 	);
 };

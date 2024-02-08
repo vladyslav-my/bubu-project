@@ -6,7 +6,7 @@ export const langSwitcherModel = [
 	},
 	{
 		id: 1,
-		content: "Eng",
+		content: "Рус",
 		lang: "en",
 	},
 ];

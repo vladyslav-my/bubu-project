@@ -6,18 +6,20 @@ import cls from "./ArrowButton.module.scss";
 
 interface ArrowButtonProps extends ButtonProps {
 	className?: string;
-	circle?: boolean;
+	outline?: boolean;
 	left?: boolean;
+	range?: boolean;
 }
 
 export const ArrowButton: FC<ArrowButtonProps> = memo(({
-	className, circle, left, ...otherProps
+	className, outline, left, range, ...otherProps
 }) => {
 	return (
 		<Button
 			className={cn(cls.ArrowButton, {
-				[cls.ArrowButton_circle]: circle,
+				[cls.ArrowButton_outline]: outline,
 				[cls.ArrowButton_left]: left,
+				[cls.ArrowButton_range]: range,
 			}, [className])}
 			{...otherProps}
 		>

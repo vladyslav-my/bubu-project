@@ -16,7 +16,7 @@ export const CatalogItemLink: FC<CatalogItemLinkProps> = ({
 	return (
 		<li className={cn(cls.CatalogItem, {}, [className])}>
 			<NavLinkButton className={cls.CatalogItem__button} to={to}>
-				{Icon && <Icon />}
+				{Icon && <Icon className={cls.CatalogItem__icon} />}
 				{name}
 			</NavLinkButton>
 		</li>

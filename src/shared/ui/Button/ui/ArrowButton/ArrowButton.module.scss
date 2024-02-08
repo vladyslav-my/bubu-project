@@ -1,5 +1,8 @@
 .ArrowButton {
 	$p: &;
+
+	display: inline-flex;
+
 	transition: color $primaryTransition;
 
 	color: $accentColor;
@@ -7,7 +10,7 @@
 		color: $accentHoverColor;
 	}
 	
-	&_circle {
+	&_outline {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -25,6 +28,37 @@
 		}
 	}
 
+	&_range {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: rem(38);
+		height: rem(38);
+
+		border-radius: 50%;
+
+		background-color: $accentColor;
+
+		&:hover {
+			background-color: $accentHoverColor;
+
+			#{$p} {
+				&__icon {
+					color: $lightPurpleColor;
+				}
+			}
+		}
+		#{$p} {
+			&__icon {
+				width: rem(16);
+				height: rem(16);
+
+				color: white;
+			}
+		}
+	}
+
 	&_left {
 		#{$p} {
 			&__icon {
@@ -34,6 +68,7 @@
 	}
 
 	&__icon {
-
+		width: rem(20);
+		height: rem(20);
 	}
 }

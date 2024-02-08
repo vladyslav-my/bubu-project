@@ -11,7 +11,7 @@ export const CarrouselSaleSection: FC<CarrouselSaleSectionProps> = () => {
 	return (
 		<CarrouselSection title="Акція!" isSale isOrderCards>
 			<CarrouselSectionItem>
-				<OrderCard src={Image} price={131} discountPrice={30} title="Коляска 2в1 Anex M/Type Dune mt-01Q" />
+				<OrderCard src={Image} price={6000} discountPrice={5000} discountPercent={15} title="Коляска 2в1 Anex M/Type Dune mt-01Q" />
 			</CarrouselSectionItem>
 			<CarrouselSectionItem>
 				<OrderCard src={Image} price={131} discountPrice={30} title="Коляска 2в1 Anex M/Type Dune mt-01Q" />

@@ -30,6 +30,7 @@ const overwritedAirbnbRules = {
 	"react-hooks/exhaustive-deps": [1],
 	"react/jsx-one-expression-per-line": [0],
 	"no-plusplus": [0],
+	radix: [0],
 };
 
 const temporarilyDisabled = {

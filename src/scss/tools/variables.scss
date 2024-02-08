@@ -10,6 +10,7 @@ $twoLevelCatalogZIndex: 200;
 $threeLevelCategoryZIndex: 300;
 $headerZIndex: 400;
 $modelZIndex: 500;
+$filtersZIndex: 300;
 
 
 $accentColor: #D03664;
@@ -32,7 +33,7 @@ $fontSize: 15; //? size
 $fontColor: $primaryTextColor; //? color
 
 $minWidth: 320; //? min width of layout
-$containerPadding: 30; //? padding for container
+// $containerPadding: 30; //? padding for container
 // $maxWidthContainer: container(1290); //? width container
 $maxWidthContainer: 1290; //? width container
 $authWidthContainer: 328; //? width container

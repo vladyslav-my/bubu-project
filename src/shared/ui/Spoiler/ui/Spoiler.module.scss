@@ -1,0 +1,56 @@
+.Spoiler {
+	$p: &;
+	&_opened {
+		#{$p} {
+			&__content {
+				padding-top: rem(20);	
+			}
+
+			&__icon {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&_closed {
+		#{$p} {
+			&__content {
+				padding-top: 0;	
+			}
+
+			&__icon {
+				transform: rotate(0deg);
+			}
+		}
+	}
+
+	&__summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		width: 100%;
+
+		cursor: pointer;
+		gap: rem(18);
+	}
+
+	&__title {
+		font-weight: 700;
+	}
+
+	&__content {
+		overflow: hidden;
+
+		box-sizing: content-box;
+
+		padding-top: rem(20);
+
+		transition: max-height $primaryTransition, padding-top $primaryTransition;
+	}
+
+
+	&__icon {
+		transition: transform $primaryTransition;
+	}
+}

@@ -18,11 +18,19 @@
 	&__image {
 		display: block;
 
-		min-height: rem(210);
-
 		max-height: 100%;
 		margin-bottom: auto;
 		margin-left: auto;
+
+		
+
+		@media (max-width: em($mobile)) {
+			min-height: rem(190);
+		}
+
+		@media (min-width: em($mobile)) {
+			min-height: rem(190);
+		}
 		
 	}
 

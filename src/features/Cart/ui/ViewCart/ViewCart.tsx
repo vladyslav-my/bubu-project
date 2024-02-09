@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from "react";
 import { useMediaQuery } from "react-responsive";
-import CartIcon from "@/shared/assets/order/cart.svg";
+import CartIcon from "@/shared/assets/product/cart.svg";
 import { Devices } from "@/shared/const/devices";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { Button } from "@/shared/ui/Button";

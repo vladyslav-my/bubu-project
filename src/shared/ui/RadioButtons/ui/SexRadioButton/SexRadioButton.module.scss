@@ -1,0 +1,38 @@
+.SexRadioButton {
+	&__label {
+		padding: rem(13);
+
+		transition: 
+			border $primaryTransition, 
+			background-color $primaryTransition;
+
+		border: rem(1) solid $greyColor;
+	
+		border-radius: rem(10);
+		
+		font-weight: 300;
+	}
+	
+	&__real {
+		position: absolute;
+		z-index: -1;
+
+		width: 0;
+		height: 0;
+
+		
+
+
+		opacity: 0;
+		&:checked + .SexRadioButton__label {
+			border: rem(1) solid $accentColor;
+			background-color: $lightPurpleColor;
+
+			font-weight: 400;
+		}
+
+		// &:focus + .Checkbox__custom {
+		// 	box-shadow: 0 0 0 rem(1) rgba(0, 0, 0, 0.7), 0 0 rem(10) rgba(0, 0, 0, 0.7);
+		// }
+	}
+}

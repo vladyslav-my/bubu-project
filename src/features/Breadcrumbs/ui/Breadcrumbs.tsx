@@ -14,7 +14,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({ className }) => {
 	const breadcrumbsItems = useMemo(() => {
 		const paths = location.pathname.split("/").slice(1).slice(0, -1);
 		return paths.map((path) => {
-			const obj = breadcrumbsModel.find((obj) => obj.path === path);
+			const obj = breadcrumbsModel.find((obj) => obj.path === `/${path}`);
 			return (
 				<li className={cls.Breadcrumbs__item}>
 					<NavLink className={cls.Breadcrumbs__link} to={path}>

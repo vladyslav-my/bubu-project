@@ -1,4 +1,4 @@
-import { getMainRoutePath } from "@/shared/config/routes/path";
+import { getBabyCarriageRoutePath, getMainRoutePath } from "@/shared/config/routes/path";
 import AutoChairIcon from "../assets/autochair.svg";
 import CarIcon from "../assets/car.svg";
 import CarriageIcon from "../assets/carriage.svg";
@@ -21,7 +21,7 @@ export const catalogModel = [
 			"Аксесуари та комплектуючі",
 			"Муфти",
 		],
-		to: getMainRoutePath(),
+		to: getBabyCarriageRoutePath(),
 	},
 	{
 		id: 1,

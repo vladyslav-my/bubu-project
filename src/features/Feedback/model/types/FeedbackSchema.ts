@@ -1,0 +1,3 @@
+export interface FeedbackSchema {
+	// Schema
+}

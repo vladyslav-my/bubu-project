@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from "react";
 import { useMediaQuery } from "react-responsive";
-import FavoriteIcon from "@/shared/assets/order/favorite.svg";
+import FavoriteIcon from "@/shared/assets/product/favorite.svg";
 import { Devices } from "@/shared/const/devices";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { Button } from "@/shared/ui/Button";

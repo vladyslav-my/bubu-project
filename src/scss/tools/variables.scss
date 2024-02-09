@@ -33,13 +33,16 @@ $fontSize: 15; //? size
 $fontColor: $primaryTextColor; //? color
 
 $minWidth: 320; //? min width of layout
-// $containerPadding: 30; //? padding for container
+$containerPadding: 30; //? padding for container
 // $maxWidthContainer: container(1290); //? width container
 $maxWidthContainer: 1290; //? width container
 $authWidthContainer: 328; //? width container
 $aboutWidthContainer: 1000; //? width container
 
+
+
 //** Break-points:
+$pc: $containerPadding * 2 + $maxWidthContainer;
 $tablet: 991.98;
 $mobile: 767.98;
 $smallMobile: 479.98;

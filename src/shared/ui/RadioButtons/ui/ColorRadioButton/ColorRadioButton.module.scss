@@ -1,0 +1,58 @@
+.ColorRadioButton {
+	&__real {
+		position: absolute;
+		z-index: -1;
+
+		width: 0;
+		height: 0;
+
+		opacity: 0;
+		&:checked + .ColorRadioButton__custom {
+			&::before {
+				opacity: 1;
+			}
+		}
+
+		// &:focus + .Checkbox__custom {
+		// 	box-shadow: 0 0 0 rem(1) rgba(0, 0, 0, 0.7), 0 0 rem(10) rgba(0, 0, 0, 0.7);
+		// }
+	}
+
+
+	&__custom {
+		position: relative;
+
+		display: inline-block;
+
+		width: rem(30);
+		height: rem(30);
+		// margin-right: rem(5);
+
+		// vertical-align: sub;
+
+		// border: 1px solid $greyColor;
+		border-radius: rem(10);
+		background-color: currentColor;
+
+		&:before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			display: block;
+
+			width: rem(38);
+			height: rem(38);
+
+			content: "";
+			transition: transform $primaryTransition;
+			transition: opacity $primaryTransition;
+			transform: translate(-50%, -50%);
+
+			opacity: 0;
+			border: rem(1) solid $accentColor;
+
+			border-radius: rem(13);
+		}
+	}
+}

@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from "react";
 import { useMediaQuery } from "react-responsive";
-import СomparisonIcon from "@/shared/assets/order/сomparison.svg";
+import СomparisonIcon from "@/shared/assets/product/сomparison.svg";
 import { Devices } from "@/shared/const/devices";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { Button } from "@/shared/ui/Button";

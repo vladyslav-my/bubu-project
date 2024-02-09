@@ -1,0 +1,61 @@
+.Rating {
+	display: inline-flex;
+	align-items: center;
+	column-gap: rem(10);
+
+	font-size: rem(17);
+	font-weight: 500;
+
+	&__this {
+		display: inline-flex;
+		align-items: center;
+
+		color: $accentColor;
+
+		font-size: rem(20);
+		font-weight: 700;
+		column-gap: rem(2);
+	}
+
+	&__icon {
+		fill: currentColor;
+
+		width: rem(23);
+		height: rem(23);
+	}
+
+
+}
+
+.Feedbacks {
+	display: flex;
+	align-items: start;
+	flex-direction: column;
+	row-gap: rem(30);
+
+	&__stat {
+		display: inline-flex;
+		column-gap: rem(20);
+	}
+
+	&__amount {
+		font-size: rem(20);
+		font-weight: 700;
+	}
+
+	&__write {
+		flex: 0 0 auto;
+	}
+}
+
+.FeedbacksLists {
+	display: flex;
+	column-gap: rem(30);
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(30);
+	}
+}
+
+

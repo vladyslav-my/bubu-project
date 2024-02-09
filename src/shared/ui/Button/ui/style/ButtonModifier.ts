@@ -5,6 +5,7 @@ export enum ButtonModifier {
 	ACCENT = "Button_accent",
 	CLEAR = "Button_clear",
 	UNDERLINE = "Button_underline",
+	GRAYUNDERLINE = "Button_grayUnderline",
 
 	SORT = "Button_sort",
 	SORTACTIVE = "Button_sort_active",

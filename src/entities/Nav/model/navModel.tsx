@@ -11,6 +11,7 @@ export const navModel = [
 	},
 	{
 		name: "Доставка і оплата",
+		secondName: "Оплата і доставка",
 		to: getMainRoutePath(),
 	},
 	{

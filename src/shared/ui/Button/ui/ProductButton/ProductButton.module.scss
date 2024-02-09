@@ -1,0 +1,57 @@
+.ProductButton {
+	$p: &;
+
+	display: inline-flex;
+	align-items: center;
+	column-gap: rem(10);
+
+	
+
+	border-radius: rem(10);
+
+	font-weight: 700;
+
+	&_fill {
+		padding: rem(30) rem(50);
+
+		transition: color $primaryTransition, 
+		background-color $primaryTransition;
+
+		color: #fff;
+		background-color: $accentColor;
+
+		&:hover {
+			color: $lightPurpleColor;
+			background-color: $accentHoverColor;
+		}
+	}
+
+	&_outline {
+		padding: rem(30) rem(50);
+
+		transition: color $primaryTransition;
+
+		color: $accentColor;
+		border: 1px solid currentColor;
+		background-color: #fff;
+
+		&:hover {
+			color: $accentHoverColor;
+		}
+	}
+
+	&_feedback {
+		padding: rem(30);
+
+		transition: color $primaryTransition, 
+		background-color $primaryTransition;
+
+		color: #fff;
+		background-color: $accentColor;
+
+		&:hover {
+			color: $lightPurpleColor;
+			background-color: $accentHoverColor;
+		}
+	}
+}

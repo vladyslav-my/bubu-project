@@ -1,0 +1,89 @@
+.Feedback {
+	display: flex;
+	flex-direction: column;
+
+	padding: rem(30);
+
+	border-radius: rem(10);
+
+	background-color: #fff;
+	row-gap: rem(15);
+
+	&__date {
+		color: $lightgreyColor;
+	}
+
+
+	&__rater {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__stars {
+		display: inline-flex;
+		column-gap: rem(5);
+	}
+
+
+	&__starIcon {
+		width: rem(19);
+		height: rem(18);
+
+		&_is {
+			fill: $accentColor;
+		}
+
+		&_isnt {
+			fill: $lightPurpleColor;
+		}
+	}
+
+	&__text {
+		line-height: rem(25);
+	}
+}
+
+
+.ImagesButtonsList {
+	display: inline-flex;
+	column-gap: rem(10);
+	&__item {
+
+	}
+
+	&__buttonOverlay {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 100%;
+		height: 100%;
+
+		text-decoration: underline;
+
+
+		background-color:  rgba(255, 255, 255, 0.7);
+	}
+
+	&__button {
+		position: relative;
+
+		overflow: hidden;
+
+		border-radius: rem(10);
+	}
+
+	&__image {
+		display: block;
+
+		width: rem(79);
+
+		height: rem(78.01);
+		object-fit: cover;
+	}
+}

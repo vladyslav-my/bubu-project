@@ -60,7 +60,16 @@
 			&__list {
 				padding-bottom: rem(0);
 
-				transition: padding-bottom $primaryTransition; 
+				transition: padding-bottom $primaryTransition;
+				> * {
+					@media (max-width: em($mobile)) {
+						max-width: rem(156);
+					}
+
+					@media (min-width: em($mobile)) {
+						max-width: rem(234);
+					}
+				}
 				&:hover {
 					padding-bottom: rem(75);
 				}

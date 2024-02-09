@@ -31,6 +31,8 @@ const overwritedAirbnbRules = {
 	"react/jsx-one-expression-per-line": [0],
 	"no-plusplus": [0],
 	radix: [0],
+	"jsx-a11y/label-has-associated-control": [0],
+	"react/no-array-index-key": [1],
 };
 
 const temporarilyDisabled = {

@@ -1,0 +1,41 @@
+.CharacterList {
+	display: flex;
+	flex-direction: column;
+
+	padding: rem(30);
+
+	border-radius: rem(10);
+	background-color: #fff;
+	row-gap: rem(30);
+
+
+	&__item {
+		display: flex;
+		align-items: end;
+		column-gap: rem(10);
+		
+		&::before {
+			flex: 1 1 auto;
+			order: 2;
+	
+			height: rem(1);
+	
+			content: "";
+	
+			background-color: #E1E1E1;
+		}
+	}
+
+
+
+	&__left {
+		order: 1;
+	
+		font-weight: 300;
+	}
+	
+	&__right {
+		order: 3;
+	}
+}
+

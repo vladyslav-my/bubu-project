@@ -57,7 +57,7 @@ export const InfoToggle: FC<InfoToggleProps> = ({
 				}
 			}
 		}
-	}, [isPreview]);
+	}, [isPreview, minShowElements]);
 
 	const onClickButtonHandler = useCallback(() => {
 		setIsPreview((prev) => !prev);

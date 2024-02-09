@@ -4,8 +4,6 @@
 
 	&__link {
 		transition: color $primaryTransition;
-	
-		color: #fff;
 
 		font-weight: 300;
 
@@ -17,6 +15,30 @@
 		&:hover {
 			color: $lightgreyColor;
 		}
+	}
+
+	&__icon {
+		color: $accentColor;
+	}
+
+	&_icon {
+
+		#{$p} {
+			&__link {
+				display: inline-flex;
+				align-items: center;
+				column-gap: rem(10);
+
+				&:hover {
+					#{$p} {
+						&__icon {
+							color: currentColor;
+						}
+					}
+				}
+			}
+		}
+
 	}
 
 	&_bold {

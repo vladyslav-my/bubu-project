@@ -119,6 +119,18 @@
       }
    }
 
+   &_grayUnderline {
+      transition: color $primaryTransition;
+      text-decoration: underline;
+
+      color: $greyColor;
+
+      font-weight: 300;
+      &:hover {
+         color: $lightgreyColor;
+      }
+   }
+
    &_sort {
       transition: color $primaryTransition;
 

@@ -1,0 +1,23 @@
+
+.DescList {
+	display: flex;
+	flex-direction: column;
+
+	padding: rem(30);
+
+	border-radius: rem(10);
+	background-color: #fff;
+	row-gap: rem(30);
+	
+	&__item {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(30);
+	}
+	
+	&__image {
+		max-width: rem(340);
+		aspect-ratio: 340 / 248;
+		object-fit: cover;
+	}
+}

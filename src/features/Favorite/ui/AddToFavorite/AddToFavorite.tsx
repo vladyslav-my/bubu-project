@@ -1,5 +1,5 @@
 import { FC, memo, useCallback } from "react";
-import FavoriteIcon from "@/shared/assets/order/favorite.svg";
+import FavoriteIcon from "@/shared/assets/product/favorite.svg";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { Button } from "@/shared/ui/Button";
 import cls from "./AddToFavorite.module.scss";

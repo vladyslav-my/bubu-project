@@ -1,15 +1,18 @@
-import { FC, memo, useCallback } from "react";
-import CartIcon from "@/shared/assets/order/cart.svg";
+import {
+	FC, ReactNode, memo, useCallback,
+} from "react";
+import ComparisonIcon from "@/shared/assets/product/сomparison.svg";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { Button } from "@/shared/ui/Button";
 import cls from "./AddToComparison.module.scss";
 
 interface AddToComparisonProps {
 	className?: string;
-	id: number;
+	id?: number;
+	children?: ReactNode;
 }
 
-export const AddToComparison: FC<AddToComparisonProps> = memo(({ className, id }) => {
+export const AddToComparison: FC<AddToComparisonProps> = memo(({ className, id, children }) => {
 	const onClickHandler = useCallback(
 		(id: number) => () => {
 			// ? Дія, яка добавляє товар в корзину по id товара
@@ -20,9 +23,10 @@ export const AddToComparison: FC<AddToComparisonProps> = memo(({ className, id }
 	return (
 		<Button
 			className={cn(cls.AddToComparison, {}, [className])}
-			onClick={onClickHandler(id)}
+			onClick={onClickHandler(id!)}
 		>
-			<CartIcon className={cls.AddToComparison__icon} />
+			<ComparisonIcon className={cls.AddToComparison__icon} />
+			{children}
 		</Button>
 	);
 });

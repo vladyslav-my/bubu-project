@@ -1,6 +1,7 @@
 import { FC, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
+import { ButtonModifier } from "@/shared/ui/Button";
 import { GroupButtons } from "@/shared/ui/GroupButtons";
 import { sortOptions } from "../../model/options/sortOptions";
 import { filtersActions, filtersSelectors } from "../../model/slice/filtersSlice";
@@ -25,6 +26,9 @@ export const SortButtons: FC<SortButtonsProps> = ({ className }) => {
 			onChange={onChangeHandler}
 			value={sort}
 			options={sortOptions}
+			modifier={ButtonModifier.SORT}
+			modifierActive={ButtonModifier.SORTACTIVE}
+			modifierNonActive={ButtonModifier.SORTNONACTIVE}
 		/>
 	);
 };

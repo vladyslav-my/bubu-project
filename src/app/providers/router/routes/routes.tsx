@@ -1,4 +1,5 @@
 import { RouteProps } from "react-router-dom";
+import { BabyCarriageDetailsPage } from "@/pages/BabyCarriageDetailsPage/ui/BabyCarriageDetailsPage/BabyCarriageDetailsPage";
 import { BabyCarriagePage } from "@/pages/BabyCarriagePage";
 import { LoginPage } from "@/pages/LoginPage";
 import { MainPage } from "@/pages/MainPage";
@@ -21,5 +22,10 @@ export const routes: AppRouteProps[] = [
 	{
 		path: getBabyCarriageRoutePath(),
 		element: <BabyCarriagePage />,
+	},
+
+	{
+		path: getBabyCarriageRoutePath(":id"),
+		element: <BabyCarriageDetailsPage />,
 	},
 ];

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useSelector } from "react-redux";
+import { MainCarrousel } from "@/features/Carrousel";
 import { catalogSpoilerSelectors } from "@/features/Catalog";
-import { MainCarrousel } from "@/entities/MainCarrousel";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { Container } from "@/shared/ui/Container";
 import cls from "./WelcomeCarrouselSection.module.scss";

@@ -1,6 +1,7 @@
 import { stat } from "fs";
 import { PayloadAction, asyncThunkCreator, buildCreateSlice } from "@reduxjs/toolkit";
 import { ThunkConfig } from "@/app/providers/StoreProvider";
+import { createSliceWithThunk } from "@/shared/lib/createSliceWithThunk";
 import { CompaniesOptionsValues } from "../options/companiesOptions";
 import { CategoryOptionValue, FiltersSchema, SortOptionValue } from "../types/FiltersSchema";
 
@@ -33,10 +34,6 @@ const initialState: FiltersSchema = {
 
 	// _limit: undefined,
 };
-
-const createSliceWithThunk = buildCreateSlice({
-	creators: { asyncThunk: asyncThunkCreator },
-});
 
 export const filtersSlice = createSliceWithThunk({
 	name: "filters",

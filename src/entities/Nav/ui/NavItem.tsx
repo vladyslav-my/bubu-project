@@ -7,7 +7,7 @@ interface NavItemProps {
 	className?: string;
 	name: string;
 	to: string;
-	modifier: ButtonModifier;
+	modifier?: ButtonModifier;
 }
 
 export const NavItem: FC<NavItemProps> = ({

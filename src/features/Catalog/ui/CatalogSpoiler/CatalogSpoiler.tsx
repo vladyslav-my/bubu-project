@@ -24,15 +24,15 @@ export const CatalogSpoiler: FC<CatalogSpoilerProps> = ({ className }) => {
 
 	const onClickBurgerHandler = useCallback(() => {
 		dispatch(catalogSpoilerAction.setIsOpen(!isOpen));
-	}, [isOpen]);
+	}, [dispatch, isOpen]);
 
 	const CatalogItems = useMemo(() => {
 		return catalogModel.map(({
 			id, Icon, name, to,
 		}) => {
-			return <CatalogItemLink key={id} Icon={Icon} name={name} to={to} />;
+			return <CatalogItemLink onClick={onClickBurgerHandler} key={id} Icon={Icon} name={name} to={to} />;
 		}, []);
-	}, []);
+	}, [onClickBurgerHandler]);
 
 	// useEffect(() => {
 	// 	if (listRef.current) {

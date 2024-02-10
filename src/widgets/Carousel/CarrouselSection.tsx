@@ -12,12 +12,12 @@ interface CarrouselSectionProps {
 	title?: string;
 	Carrousel?: any;
 	isSale?: boolean;
-	isOrderCards?: boolean;
+	isProductCards?: boolean;
 	children: ReactNode;
 }
 
 export const CarrouselSection: FC<CarrouselSectionProps> = memo(({
-	className, title, isSale, isOrderCards, children,
+	className, title, isSale, isProductCards, children,
 }) => {
 	const listRef = useRef<HTMLUListElement>(null);
 	const timeoutRef = useRef<any>(null);
@@ -82,7 +82,7 @@ export const CarrouselSection: FC<CarrouselSectionProps> = memo(({
 
 	return (
 		<section className={cn(cls.CarrouselSection, {
-			[cls.CarrouselSection_padding]: isOrderCards,
+			[cls.CarrouselSection_padding]: isProductCards,
 		}, [className])}
 		>
 			<Container className={cls.CarrouselSection__container}>

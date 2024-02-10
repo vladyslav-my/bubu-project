@@ -1,24 +1,28 @@
 import {
-	FC, useEffect, useRef, useState,
+	FC, useEffect, useLayoutEffect,
 } from "react";
-import { CarrouselSection } from "@/widgets/CarrouselSection";
 import { Page } from "@/widgets/Page";
-import { MainCarrousel } from "@/entities/MainCarrousel";
+import { YouViewSection } from "@/widgets/YouViewSection";
+import { catalogSpoilerAction } from "@/features/Catalog/model/slice/catalogSpoilerSlice";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
-import { Container } from "@/shared/ui/Container";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { AboutSection } from "./AboutSection/AboutSection";
 import { CarrouselSaleSection } from "./CarrouselSaleSection/CarrouselSaleSection";
 import cls from "./MainPage.module.scss";
 import { PopularBrandsSection } from "./PopularBrandsSection/PopularBrandsSection";
 import { PopularCategorySection } from "./PopularCategorySection/PopularCategorySection";
 import { WelcomeCarrouselSection } from "./WelcomeCarrouselSection/WelcomeCarrouselSection";
-import { YouViewSection } from "./YouViewSection/YouViewSection";
 
 interface MainPageProps {
 	className?: string
 }
 
 export const MainPage: FC<MainPageProps> = ({ className }) => {
+	const dispatch = useAppDispatch();
+	useEffect(() => {
+		dispatch(catalogSpoilerAction.setIsOpen(true));
+	}, [dispatch]);
+
 	return (
 		<Page className={cn(cls.MainPage, {}, [className])}>
 			<WelcomeCarrouselSection />

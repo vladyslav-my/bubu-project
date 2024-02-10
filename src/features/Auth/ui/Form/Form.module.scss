@@ -1,0 +1,21 @@
+.Form {
+	display: flex;
+	flex-direction: column;
+	gap: rem(20);
+
+	margin-bottom: rem(30);
+
+	&__title {
+		margin-bottom: rem(10);
+	
+		text-align: center;
+	
+		text-transform: uppercase;
+	
+		font-size: rem(20);
+	
+		font-weight: 700;
+	}
+}
+
+

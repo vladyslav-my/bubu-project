@@ -6,7 +6,6 @@ import cls from "./BurgerButton.module.scss";
 
 interface BurgerButtonProps {
 	className?: string;
-	setIsOpen: any;
 	isOpen: boolean;
 	onClick: () => void;
 }

@@ -18,8 +18,10 @@ export enum AddressModifier {
 export const Address: FC<AddressProps> = ({ className, modifier = "", slotForFeature }) => {
 	const AddressItems = useMemo(
 		() => {
-			return addressModel.map(({ content, href, modifier }) => {
-				return <AddressItem content={content} href={href} modifier={modifier} />;
+			return addressModel.map(({
+				content, href, modifier, id,
+			}) => {
+				return <AddressItem key={id} content={content} href={href} modifier={modifier} />;
 			});
 		},
 		[],

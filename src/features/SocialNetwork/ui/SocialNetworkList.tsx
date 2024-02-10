@@ -18,9 +18,9 @@ export const SocialNetworkList: FC<SocialNetworkListProps> = memo(({
 	modifier = SocialNetworkListModifier.HEADER,
 }) => {
 	const socialNetworkItems = useMemo(() => {
-		return socialNetworkModel.map(({ Icon, href }) => {
+		return socialNetworkModel.map(({ Icon, href, id }) => {
 			return (
-				<SocialNetworkItem className={cls.SocialNetworkList__item} Icon={Icon} href={href} />
+				<SocialNetworkItem key={id} className={cls.SocialNetworkList__item} Icon={Icon} href={href} />
 			);
 		});
 	}, []);

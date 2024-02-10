@@ -1,13 +1,13 @@
 import { FC, memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
-import { ToPersonalAccount } from "@/features/Auth";
+import { Logout } from "@/features/Auth";
 import {
 	BurgerButton, OneLevelMenu, OverlayBurgerMenu, ThreeLevelCategory, TwoLevelCatalog,
 } from "@/features/BurgerMenu";
 import { CatalogSpoiler } from "@/features/Catalog";
 import { LangSwitcher } from "@/features/LangSwitcher";
-import { OrderSearchField, orderSearchSelectors } from "@/features/OrderSearch";
+import { ProductSearchField, productSearchSelectors } from "@/features/ProductSearch";
 import { SocialNetworkList } from "@/features/SocialNetwork";
 import { PhoneNumber } from "@/entities/PhoneNumber";
 import { getLoginRoutePath } from "@/shared/config/routes/path";
@@ -18,7 +18,7 @@ import { Container } from "@/shared/ui/Container";
 import { SearchField } from "@/shared/ui/Field";
 import { Logo, LogoModifier } from "@/shared/ui/Logo";
 import { Nav } from "../Nav/Nav";
-import { OrdersActionsGroup } from "../OrdersActionsGroup/OrdersActionsGroup";
+import { ProductsActionsGroup } from "../ProductsActionsGroup/ProductsActionsGroup";
 import cls from "./Header.module.scss";
 
 interface HeaderProps {
@@ -27,7 +27,7 @@ interface HeaderProps {
 
 export const Header: FC<HeaderProps> = memo(({ className }) => {
 	const isTablet = useMediaQuery({ maxWidth: Devices.TABLET });
-	const isVisibleSearchField = useSelector(orderSearchSelectors.getIsVisibleSearchField);
+	const isVisibleSearchField = useSelector(productSearchSelectors.getIsVisibleSearchField);
 
 	const HeaderTop = useCallback(() => {
 		if (!isTablet) {
@@ -38,7 +38,7 @@ export const Header: FC<HeaderProps> = memo(({ className }) => {
 					<PhoneNumber className={cls.Header__phoneNumber} />
 					<SocialNetworkList className={cls.Header__socialNetworkList} />
 					<LangSwitcher className={cls.Header__langSwitcher} />
-					<ToPersonalAccount />
+					<Logout />
 				</div>
 			);
 		}
@@ -55,9 +55,9 @@ export const Header: FC<HeaderProps> = memo(({ className }) => {
 						{!isTablet && <CatalogSpoiler className={cls.Header__catalogSpoiler} />}
 						{isTablet && <BurgerButton />}
 						{isTablet && <Logo className={cls.Header__logo} />}
-						<OrdersActionsGroup className={cls.Header__ordersActionsGroup} />
+						<ProductsActionsGroup className={cls.Header__productsActionsGroup} />
 					</div>
-					{isVisibleSearchField && <OrderSearchField />}
+					{isVisibleSearchField && <ProductSearchField />}
 				</Container>
 			</header>
 			<OverlayBurgerMenu />

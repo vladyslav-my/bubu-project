@@ -24,21 +24,21 @@ export const Footer: FC<FooterProps> = memo(({ className }) => {
 	const isMobile = useMediaQuery({ maxWidth: Devices.MOBILE });
 
 	const navItems = useMemo(() => {
-		return navModel.map(({ name, to }) => {
-			return <NavItem name={name} to={to} />;
+		return navModel.map(({ name, to, id }) => {
+			return <NavItem key={id} name={name} to={to} />;
 		});
 	}, []);
 
 	const catalogItems = useMemo(() => {
-		return catalogModel.map(({ name, to }) => {
-			return <CatalogItemLink name={name} to={to} />;
+		return catalogModel.map(({ name, to, id }) => {
+			return <CatalogItemLink key={id} name={name} to={to} />;
 		});
 	}, []);
 
 	const paymentItems = useMemo(() => {
 		return paymentModel.map(({ url, id }) => {
 			return (
-				<li>
+				<li key={id}>
 					<img src={url} alt="" />
 				</li>
 			);

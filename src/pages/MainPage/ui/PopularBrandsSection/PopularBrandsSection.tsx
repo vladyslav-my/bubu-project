@@ -1,5 +1,5 @@
 import { FC, useMemo } from "react";
-import { CarrouselSection } from "@/widgets/CarrouselSection";
+import { CarrouselSection } from "@/features/Carrousel";
 import { PopularBrandsItem, popularBrandsModel } from "@/entities/PopularBrands";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import cls from "./PopularBrandsSection.module.scss";
@@ -20,7 +20,7 @@ export const PopularBrandsSection: FC<PopularBrandsSectionProps> = ({ className 
 	}, []);
 
 	return (
-		<CarrouselSection title="Популярні бренди" className={cn(cls.PopularBrandsSection, {}, [className])}>
+		<CarrouselSection title="ПОПУЛЯРНІ БРЕНДИ" className={cn(cls.PopularBrandsSection, {}, [className])}>
 			{popularBrandsItems}
 		</CarrouselSection>
 	);

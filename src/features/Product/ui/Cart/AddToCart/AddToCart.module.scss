@@ -1,0 +1,24 @@
+.AddToCart {
+	$p: &;
+	display: flex;
+	align-items: center;
+
+
+
+	&_icon {
+		color: $accentColor;
+		column-gap: rem(10);
+
+		#{$p} {
+			&__icon {
+				width: rem(27);
+				height: rem(19.93);
+		
+				color: currentColor
+			}
+		}
+		&:hover {
+			color: #A5A5A5;
+		}
+	}
+}

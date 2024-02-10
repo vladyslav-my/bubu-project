@@ -1,0 +1,74 @@
+.PurpleSection {
+	padding: rem(80) 0;
+
+	background: $lightPurpleColor;
+
+	&__container {
+		display: grid;
+		gap: rem(50) rem(30);
+		
+		@media (min-width: em($pc)) {
+			grid-template-columns: minmax(0, 1fr) rem(519);
+		}
+
+		@media (max-width: em($pc)) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__desc {
+
+	}
+
+	&__character {
+
+	}
+
+	&__feedbacks {
+		@media (min-width: em($pc)) {
+			grid-column: 1 / 3;
+		}
+	}
+}
+
+
+.Character {
+	&__title {
+		margin-bottom: rem(20);
+
+		text-transform: uppercase;
+	}
+}
+
+
+.Desc {
+	&__title {
+		margin-bottom: rem(20);
+
+		text-transform: uppercase;
+	}
+
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+
+		padding: rem(30);
+
+		border-radius: rem(10);
+		background-color: #fff;
+		row-gap: rem(30);
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(30);
+	}
+
+	&__image {
+		max-width: rem(340);
+		aspect-ratio: 340 / 248;
+		object-fit: cover;
+	}
+}

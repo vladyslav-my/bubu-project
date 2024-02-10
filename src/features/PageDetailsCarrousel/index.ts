@@ -1,1 +1,1 @@
-export { PageDetailsCarrousel } from "./ui/PageDetailsCarrousel";
+export { PageDetailsCarrousel } from "../Carrousel/ui/PageDetailsCarrousel/PageDetailsCarrousel";

@@ -5,8 +5,8 @@ import { Breadcrumbs } from "@/features/Breadcrumbs";
 import {
 	Filters, Pagination, SelectedFilters, SortButtons, SortDropDown,
 } from "@/features/Filters";
-import { mockOrderListModel } from "@/entities/MockOrderList";
-import { OrderCard } from "@/entities/Order";
+import { mockProductListModel } from "@/entities/MockProductList";
+import { ProductCard } from "@/entities/Product";
 import { Devices } from "@/shared/const/devices";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -24,12 +24,13 @@ export const BabyCarriagePage: FC<BabyCarriagePageProps> = ({ className }) => {
 	const isTablet = useMediaQuery({ maxWidth: Devices.TABLET });
 
 	const productsItems = useMemo(() => {
-		return mockOrderListModel.map(({
+		return mockProductListModel.map(({
 			id, price, src, title, discountPercent, discountPrice,
 		}) => {
 			return (
-				<OrderCard
+				<ProductCard
 					key={id}
+					id={id}
 					title={title}
 					src={src}
 					price={price}

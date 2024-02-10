@@ -5,9 +5,9 @@
 
 	padding: rem(30);
 
-	border-radius: rem(10);
 	background-color: #fff;
 	row-gap: rem(30);
+	
 	
 	&__item {
 		display: flex;
@@ -17,6 +17,8 @@
 	
 	&__image {
 		max-width: rem(340);
+
+		border-radius: rem(10);
 		aspect-ratio: 340 / 248;
 		object-fit: cover;
 	}

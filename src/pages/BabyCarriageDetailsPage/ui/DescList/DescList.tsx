@@ -1,56 +1,41 @@
-import { FC, useMemo } from "react";
+import { FC, useCallback, useMemo } from "react";
 import { InfoToggle } from "@/features/InfoToggle";
+import { BabyCarriageData } from "@/entities/BabyCarriageProductDetails";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
-import Image from "../../assets/image1.png";
 import cls from "./DescList.module.scss";
 
 interface DescListProps {
 	className?: string;
-	data?: Data[];
+	data?: BabyCarriageData;
 }
 
-interface Data {
-	text: string;
-	src: string;
-}
+export const DescList: FC<DescListProps> = ({ className, data }) => {
+	const descList = useMemo(() => {
+		return data?.productsDesc.list;
+	}, [data?.productsDesc.list]);
 
-const _data: Data[] = [
-	{
-		src: Image,
-		text: "Ключові особливості колекції m/type PRO зосереджені на зручність для батьків і комфорт для дітей. Ця модель дозволяє однаково насолоджуватися прогулянками міськими вуличками і лісовими стежками.",
-	},
-	{
-		src: Image,
-		text: "Ключові особливості колекції m/type PRO зосереджені на зручність для батьків і комфорт для дітей. Ця модель дозволяє однаково насолоджуватися прогулянками міськими вуличками і лісовими стежками.",
-	},
-	{
-		src: Image,
-		text: "Ключові особливості колекції m/type PRO зосереджені на зручність для батьків і комфорт для дітей. Ця модель дозволяє однаково насолоджуватися прогулянками міськими вуличками і лісовими стежками.",
-	},
-	{
-		src: Image,
-		text: "Ключові особливості колекції m/type PRO зосереджені на зручність для батьків і комфорт для дітей. Ця модель дозволяє однаково насолоджуватися прогулянками міськими вуличками і лісовими стежками.",
-	},
-	{
-		src: Image,
-		text: "Ключові особливості колекції m/type PRO зосереджені на зручність для батьків і комфорт для дітей. Ця модель дозволяє однаково насолоджуватися прогулянками міськими вуличками і лісовими стежками.",
-	},
-];
-
-export const DescList: FC<DescListProps> = ({ className, data = _data }) => {
 	const descItems = useMemo(() => {
-		return data.map(({ text, src }) => {
+		return descList?.map(({
+			id, text, src, alt,
+		}) => {
 			return (
-				<li className={cls.DescList__item}>
+				<li key={id} className={cls.DescList__item}>
 					<p className={cls.DescList__parapraph}>{text}</p>
-					<img className={cls.DescList__image} src={src} alt="" />
+					<img className={cls.DescList__image} src={src} alt={alt} />
 				</li>
 			);
 		}, {});
-	}, [data]);
+	}, [descList]);
 
 	return (
-		<InfoToggle minShowElements={2} className={cn(cls.DescList, {}, [className])}>
+		<InfoToggle
+			minShowElements={2}
+			tag="ul"
+			className={{
+				parent: cn(cls.DescList, {}, [className]),
+				children: cls.DescList__item,
+			}}
+		>
 			{descItems}
 		</InfoToggle>
 	);

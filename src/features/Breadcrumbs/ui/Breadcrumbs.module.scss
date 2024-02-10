@@ -1,6 +1,6 @@
 .Breadcrumbs {
 	display: flex;
-
+	column-gap: rem(5);
 
 	> *:after {
 		content: "\00A0" ">";

@@ -1,144 +1,37 @@
 import { FC, ReactElement, useMemo } from "react";
 import { useMediaQuery } from "react-responsive";
 import { WriteFeedbackButton } from "@/features/Feedback";
+import { BabyCarriageData } from "@/entities/BabyCarriageProductDetails";
 import { Devices } from "@/shared/const/devices";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
-import Imagee from "../../assets/image1.png";
 import StarIcon from "../../assets/star.svg";
 import { Feedback } from "../Feedback/Feedback";
 import cls from "./Feedbacks.module.scss";
 
 interface FeedbacksProps {
 	className?: string;
-	amount?: number;
-	rating?: string;
-	data?: Data[]
+	data: BabyCarriageData;
 }
-
-interface Data {
-	name: string;
-	rating: number;
-	images?: Image[];
-	text: string;
-	date: string;
-}
-
-interface Image {
-	src: string;
-	alt: string;
-}
-
-const _data = [
-	{
-		name: "Олег 1",
-		date: "20.09.22",
-		rating: 5,
-		text: "Оказалась, очень удобной для малыша со скрытым копюшоном батискафом, для родителей лёгкой и маневренной. Ещё  немаловажными плюсами являются маленькими габаритами в сложенном состоянии и легко снять весь текстиль для стирки. Из минусов только то что в комплектации нет маскитки, дождивика и чехла на ножки.",
-		images: [
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-		],
-	},
-	{
-		name: "Олег 2",
-		date: "20.09.22",
-		rating: 5,
-		text: "Оказалась, очень удобной для малыша со скрытым копюшоном батискафом, для родителей лёгкой и маневренной. Ещё  немаловажными плюсами являются маленькими габаритами в сложенном состоянии и легко снять весь текстиль для стирки. Из минусов только то что в комплектации нет маскитки, дождивика и чехла на ножки.",
-		images: [
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-		],
-	},
-	{
-		name: "Олег 3",
-		date: "20.09.22",
-		rating: 5,
-		text: "Оказалась, очень удобной для малыша со скрытым копюшоном батискафом, для родителей лёгкой и маневренной. Ещё  немаловажными плюсами являются маленькими габаритами в сложенном состоянии и легко снять весь текстиль для стирки. Из минусов только то что в комплектации нет маскитки, дождивика и чехла на ножки.",
-		images: [
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-		],
-	},
-	{
-		name: "Олег 4",
-		date: "20.09.22",
-		rating: 5,
-		text: "Оказалась, очень удобной для малыша со скрытым копюшоном батискафом, для родителей лёгкой и маневренной. Ещё  немаловажными плюсами являются маленькими габаритами в сложенном состоянии и легко снять весь текстиль для стирки. Из минусов только то что в комплектации нет маскитки, дождивика и чехла на ножки.",
-		images: [
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-			{
-				src: Imagee,
-				alt: "1",
-			},
-		],
-	},
-];
 
 export const Feedbacks: FC<FeedbacksProps> = ({
-	className, amount = 9, rating = "4.5", data = _data,
+	className, data,
 }) => {
 	const isContainer = useMediaQuery({ maxWidth: 1350 });
 	const isMobile = useMediaQuery({ maxWidth: Devices.MOBILE });
+	const averageRating = useMemo(() => {
+		const total = data.productsFeedback.list.reduce((a, b) => {
+			return a + b.rating;
+		}, 0);
+
+		return total / data.productsFeedback.list.length;
+	}, [data.productsFeedback.list]);
 
 	const feadbacksItems = useMemo(() => {
 		const oneColumn: ReactElement[] = [];
 		const twoColumn: ReactElement[] = [];
 		const threeColumn: ReactElement[] = [];
 
-		data.forEach((data, i) => { //! Цей код можна декомпозувати в функції
+		data?.productsFeedback.list.forEach((data, i) => { //! Цей код можна декомпозувати в функції
 			const value = ++i;
 
 			if (!isContainer) {
@@ -189,12 +82,12 @@ export const Feedbacks: FC<FeedbacksProps> = ({
 		<div className={cn(cls.Feedbacks, {}, [className])}>
 			<div className={cls.Feedbacks__stat}>
 				<h2 className={cls.Feedbacks__amount}>
-					Відгуки ({amount})
+					ВІДГУКИ ({data?.productsFeedback.list.length})
 				</h2>
 				<span className={cls.Rating}>
 					Рейтинг:
 					<span className={cls.Rating__this}>
-						{rating}
+						{averageRating}
 						<StarIcon className={cls.Rating__icon} />
 					</span>
 				</span>

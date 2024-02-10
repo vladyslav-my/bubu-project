@@ -9,9 +9,9 @@ interface NavProps {
 
 export const Nav: FC<NavProps> = memo(({ className }) => {
 	const navItems = useMemo(() => {
-		return navModel.map(({ name, to }) => {
+		return navModel.map(({ name, to, id }) => {
 			return (
-				<NavItem className={cls.Nav__item} name={name} to={to} />
+				<NavItem key={id} className={cls.Nav__item} name={name} to={to} />
 			);
 		});
 	}, []);

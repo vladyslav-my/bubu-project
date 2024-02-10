@@ -1,0 +1,16 @@
+.AddToFavorite {
+	$p: &;
+	display: inline-flex;
+	align-items: center;
+
+	color: $accentColor;
+	column-gap: rem(10);
+	&__icon {
+		width: rem(23);
+		height: rem(19);
+	}
+
+	&:hover {
+		color: $lightgreyColor;
+	}
+}

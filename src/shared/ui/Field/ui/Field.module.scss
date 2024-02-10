@@ -3,6 +3,7 @@
 
 	width: 100%;
 
+
 	&__input {
 		width: 100%;
 
@@ -11,6 +12,9 @@
 			border $primaryTransition;
 
 		border-radius: rem(10);
+
+		
+
 	}
 
 	&_auth {
@@ -38,6 +42,9 @@
 				color: #fff;
 				border: 1px solid currentColor;
 				background: rgba(255, 255, 255, 0.15);
+				&::placeholder {
+					color: #fff;
+				}
 
 
 
@@ -45,9 +52,6 @@
 					border: 1px solid $lightgreyColor;
 				}
 
-				&::placeholder {
-					color: #fff;
-				}
 			}
 
 			
@@ -65,6 +69,9 @@
 				
 				border: 1px solid currentColor;
 				background: rgba(255, 255, 255, 0.15);
+				&::placeholder {
+					color: #fff;
+				}
 				
 				&:focus {
 					border: 1px solid $lightgreyColor;
@@ -100,7 +107,10 @@
 
 
 	&__wrong {
-		margin-top: rem(-17);
+		// position: absolute;
+		z-index: -1;
+
+		// margin-top: rem(-17);
 		margin-left: rem(2);
 
 		transition: margin-top $primaryTransition;

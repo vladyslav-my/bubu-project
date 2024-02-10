@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from "react";
 import { useSelector } from "react-redux";
-import { ToPersonalAccount } from "@/features/Auth";
+import { Logout } from "@/features/Auth";
 import { LangSwitcher } from "@/features/LangSwitcher";
 import { SocialNetworkList } from "@/features/SocialNetwork";
 import { PhoneNumber } from "@/entities/PhoneNumber";
@@ -41,7 +41,7 @@ export const OneLevelMenu: FC<OneLevelMenuProps> = memo(({ className }) => {
 				<PhoneNumber />
 				<SocialNetworkList />
 				<LangSwitcher />
-				<ToPersonalAccount />
+				<Logout />
 			</div>
 
 		</div>

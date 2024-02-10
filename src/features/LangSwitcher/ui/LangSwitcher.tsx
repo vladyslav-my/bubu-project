@@ -15,12 +15,14 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(({ className }) => {
 	const { t, i18n } = useTranslation("translation");
 
 	const langSwitcherItems = useMemo(() => {
-		return langSwitcherModel.map(({ lang, content }) => {
+		return langSwitcherModel.map(({ lang, content, id }) => {
 			return (
-				<span className={cn(cls.LangSwitcher__item, {
-					[cls.LangSwitcher__item_active]: i18n.language === lang,
-					[cls.LangSwitcher__item_noActive]: i18n.language !== lang,
-				}, [])}
+				<span
+					key={id}
+					className={cn(cls.LangSwitcher__item, {
+						[cls.LangSwitcher__item_active]: i18n.language === lang,
+						[cls.LangSwitcher__item_noActive]: i18n.language !== lang,
+					}, [])}
 				>
 					{content}
 				</span>

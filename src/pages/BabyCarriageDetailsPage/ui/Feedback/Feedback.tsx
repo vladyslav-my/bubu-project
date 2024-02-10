@@ -1,53 +1,15 @@
-import { FC, useCallback, useMemo } from "react";
+import { FC, useMemo } from "react";
+import { ProductsFeedback } from "@/entities/BabyCarriageProductDetails";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
-import Imagee from "../../assets/image1.png";
 import StarIcon from "../../assets/star.svg";
 import cls from "./Feedback.module.scss";
 
 interface FeedbackProps {
 	className?: string;
-	data?: Data,
+	data: ProductsFeedback,
 }
 
-interface Data {
-	name: string;
-	rating: number;
-	images?: Image[];
-	text: string;
-	date: string;
-}
-
-interface Image {
-	src: string;
-	alt: string;
-}
-
-const _data: Data = {
-	name: "Олег",
-	date: "20.09.22",
-	rating: 5,
-	text: "Оказалась, очень удобной для малыша со скрытым копюшоном батискафом, для родителей лёгкой и маневренной. Ещё  немаловажными плюсами являются маленькими габаритами в сложенном состоянии и легко снять весь текстиль для стирки. Из минусов только то что в комплектации нет маскитки, дождивика и чехла на ножки.",
-	images: [
-		{
-			src: Imagee,
-			alt: "1",
-		},
-		{
-			src: Imagee,
-			alt: "1",
-		},
-		{
-			src: Imagee,
-			alt: "1",
-		},
-		{
-			src: Imagee,
-			alt: "1",
-		},
-	],
-};
-
-export const Feedback: FC<FeedbackProps> = ({ className, data = _data }) => {
+export const Feedback: FC<FeedbackProps> = ({ className, data }) => {
 	const starsItems = useMemo(() => {
 		return new Array(5).fill(undefined).map((_, i) => {
 			const isActive = data.rating >= ++i;

@@ -1,0 +1,81 @@
+
+
+.RegisterPage {
+	&__or {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		margin-bottom: rem(30);
+
+		text-transform: capitalize;
+
+		color: $greyColor;
+		column-gap: rem(20);
+
+		&:before, &:after {
+			width: 100%;
+			height: rem(2);
+
+			content: "";
+
+			background-color: $lightgreyColor;
+		}
+	}
+
+	&__container {
+		
+	}
+
+
+
+	&__logo {
+		display: flex;
+		justify-content: center;
+
+		margin-bottom: rem(40.04);
+	}
+}
+
+.SocialAuth {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	row-gap: rem(15);
+
+
+	&__title {
+
+	}
+
+	&__list {
+		display: inline-flex;
+		column-gap: rem(30);
+
+	}
+
+	&__item {
+
+	}
+
+	&__button {
+		transition: opacity $primaryTransition;
+
+		opacity: 0.8;
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&__icon {
+		&_facebook {
+			width: rem(38.76);
+			height: rem(39.67);
+		}
+
+		&_google {
+			width: rem(40);
+			height: rem(40);
+		}
+	}
+}

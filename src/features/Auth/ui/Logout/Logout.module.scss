@@ -1,0 +1,25 @@
+.Logout {
+	display: inline-flex;
+	align-items: center;
+
+	transition: color $primaryTransition;
+
+	color: #fff;
+	column-gap: rem(10);
+
+	&:hover {
+		color: $lightgreyColor;
+	}
+
+	&__icon {
+		width: rem(21.5);
+		height: rem(20.92);
+	}
+
+	&__content {
+		text-decoration: underline;
+
+		font-size: rem(14);
+		font-weight: 500;
+	}
+}

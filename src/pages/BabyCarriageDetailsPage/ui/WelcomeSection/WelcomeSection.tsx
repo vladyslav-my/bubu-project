@@ -5,6 +5,7 @@ import { AddToComparison, AddToFavorite } from "@/features/Product";
 import { AddressItem, addressModel } from "@/entities/Address";
 import { BabyCarriageData } from "@/entities/BabyCarriageProductDetails";
 import { NavItem, navModel } from "@/entities/Nav";
+import StarIcon from "@/shared/assets/common/star.svg";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import {
 	Button, ButtonModifier, ProductButton, ProductButtonModifier,
@@ -12,7 +13,6 @@ import {
 import { Container } from "@/shared/ui/Container";
 import { ColorRadioButton, GenderRadioButton } from "@/shared/ui/RadioButtons";
 import { Title } from "@/shared/ui/Title";
-import StarIcon from "../../assets/star.svg";
 import cls from "./WelcomeSection.module.scss";
 
 interface WelcomeSectionProps {

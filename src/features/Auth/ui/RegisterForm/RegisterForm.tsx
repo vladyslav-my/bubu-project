@@ -55,22 +55,26 @@ export const RegisterForm: FC<RegisterFormProps> = ({ className }) => {
 		>
 			<AuthField
 				value={name.field}
+				wrongText={name.textWrong}
 				placeholder="Ім'я"
 				onChange={onChangeName}
 			/>
 			<AuthField
-				wrongText="Помилка"
 				value={phone.field}
+				wrongText={phone.textWrong}
 				placeholder="Телефон"
 				onChange={onChangePhone}
+
 			/>
 			<AuthField
 				value={email.field}
+				wrongText={email.textWrong}
 				placeholder="E-mail"
 				onChange={onChangeEmail}
 			/>
 			<AuthField
 				value={password.field}
+				wrongText={password.textWrong}
 				placeholder="Пароль"
 				onChange={onChangePassword}
 			/>

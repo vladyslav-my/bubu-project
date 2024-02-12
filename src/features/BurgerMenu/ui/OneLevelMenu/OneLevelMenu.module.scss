@@ -11,7 +11,7 @@
 	width: rem(266);
 
 	height: 100%;
-	padding: rem(115) rem(16) rem(30) rem(30);
+
 
 	transition: left $primaryTransition;
 
@@ -41,4 +41,11 @@
 		left: -100%;
 	}
 
+	@media (min-width: em($mobile)) {
+		padding: rem(115) rem(16) rem(30) rem(30);
+	}
+
+	@media (max-width: em($mobile)) {
+		padding: rem(95) rem(16) rem(30) rem(30);
+	}
 }

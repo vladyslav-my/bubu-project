@@ -1,8 +1,7 @@
 import { FC, ReactNode } from "react";
-import { getRegisterRoutePath } from "@/shared/config/routes/path";
+import { getLoginRoutePath, getRegisterRoutePath } from "@/shared/config/routes/path";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonModifier, NavLinkButton } from "@/shared/ui/Button";
-import { AuthField } from "@/shared/ui/Field";
 import cls from "./Form.module.scss";
 
 interface FormProps {
@@ -11,10 +10,11 @@ interface FormProps {
 	children?: ReactNode;
 	submitButtonName: string;
 	onSubmit: (e: any) => void;
+	toRegister?: boolean;
 }
 
 export const Form: FC<FormProps> = ({
-	className, title, children, submitButtonName, onSubmit,
+	className, title, children, submitButtonName, onSubmit, toRegister,
 }) => {
 	return (
 		<form className={cn(cls.Form, {}, [className])} onSubmit={onSubmit} action="post">
@@ -25,19 +25,17 @@ export const Form: FC<FormProps> = ({
 			</NavLinkButton>
 			<Button
 				type="submit"
-				className={cn("", {}, [])}
 				modifier={ButtonModifier.AUTH}
 				secondaryModifier={ButtonModifier.AUTHFILL}
 			>
 				{submitButtonName}
 			</Button>
 			<NavLinkButton
-				className={cn("", {}, [])}
 				modifier={ButtonModifier.AUTH}
 				secondaryModifier={ButtonModifier.AUTHOUTLINE}
-				to={getRegisterRoutePath()}
+				to={toRegister ? getRegisterRoutePath() : getLoginRoutePath()}
 			>
-				У мене немає акаунта
+				{toRegister ? "У мене немає акаунта" : "У мене є акаунт"}
 			</NavLinkButton>
 		</form>
 	);

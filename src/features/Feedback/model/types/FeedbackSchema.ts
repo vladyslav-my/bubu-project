@@ -1,3 +1,3 @@
 export interface FeedbackSchema {
-	// Schema
+	isOpenModal: boolean;
 }

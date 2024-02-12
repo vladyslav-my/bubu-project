@@ -1,7 +1,6 @@
 import React, {
 	FC, ReactNode, useEffect, useRef, useState,
 } from "react";
-import { Shell } from "../../../layouts/Shell";
 import { classNames } from "../../../lib/classNames/classNames";
 import { Portal } from "../../Portal";
 import cls from "./Modal.module.scss";
@@ -48,8 +47,8 @@ export const Modal: FC<ModalProps> = ({
 	};
 
 	const modalMods = {
-		[cls.Modal_oppened]: oppened,
-		[cls.Modal_clossed]: !oppened,
+		[cls.Modal_opened]: oppened,
+		[cls.Modal_closed]: !oppened,
 	};
 
 	if (lazy && !isMounted) {
@@ -59,12 +58,12 @@ export const Modal: FC<ModalProps> = ({
 	return (
 		<Portal>
 			<div className={classNames(cls.Modal, modalMods, [])} onClick={onCloseHandler}>
-				<Shell
+				<div
 					className={classNames(cls.Modal__shell, {}, [cls.Modal__shell_animation, className])}
 					onClick={onClickShell}
 				>
 					{children}
-				</Shell>
+				</div>
 			</div>
 		</Portal>
 	);

@@ -30,7 +30,7 @@ export const AuthField: FC<AuthFieldProps> = memo(({
 	return (
 		<Field
 			className={cn(cls.Field, {
-				[cls.Field_wrong]: wrong,
+				[cls.Field_wrong]: wrongText,
 			}, [className])}
 			value={value}
 			placeholder={placeholder}

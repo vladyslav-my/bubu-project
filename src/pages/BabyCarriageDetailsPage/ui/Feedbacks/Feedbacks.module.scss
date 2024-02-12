@@ -53,6 +53,7 @@
 	column-gap: rem(30);
 	&__list {
 		display: flex;
+		flex: 1 1 100%;
 		flex-direction: column;
 		row-gap: rem(30);
 	}

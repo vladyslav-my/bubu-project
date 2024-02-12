@@ -2,7 +2,7 @@
 	$p: &;
 	position: fixed;
 
-	z-index: 9999;
+	z-index: $modalZindex;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -21,25 +21,29 @@
 
 
 	&__shell {
+		padding: rem(30) rem(20);
+
 		transition: all 0.5s ease;
 
-		background-color: var(--secondary-bg-color);
+		border-radius: rem(20);
+
+		background-color: #fff;
+		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.1);
 
 	}
 
-	&_clossed {
+	&_closed {
 		pointer-events: none;
 		#{$p}__shell_animation {
 			animation: fadeOut 0.3s;
 		}
 	}
 
-	&_oppened {
+	&_opened {
 		#{$p}__shell_animation {
 			animation: fadeIn 0.3s;
 		}
 	}
-
 }
 
 

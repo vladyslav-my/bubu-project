@@ -4,6 +4,7 @@ import {
 import { loginSlice, registerSlice } from "@/features/Auth";
 import { burgerMenuSlice } from "@/features/BurgerMenu";
 import { catalogSpoilerSlice } from "@/features/Catalog";
+import { feedbackSlice } from "@/features/Feedback";
 import { filtersMenuSlice, filtersSlice } from "@/features/Filters";
 import { productSearchSlice } from "@/features/ProductSearch";
 import { babyCarriageProductDetailsSlice } from "@/entities/BabyCarriageProductDetails";
@@ -23,6 +24,7 @@ export const createReduxStore = () => {
 		filtersSlice,
 		filtersMenuSlice,
 		babyCarriageProductDetailsSlice,
+		feedbackSlice,
 	);
 
 	const extraArgument: ExtraArgumentType = {

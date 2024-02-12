@@ -1,0 +1,166 @@
+.FeedbackModal {
+	display: grid;
+
+	max-width: rem(320);
+	row-gap: rem(30);
+
+	&__rating {
+		display: inline-flex;
+		align-items: center;
+
+		column-gap: rem(10);
+	}
+
+	&__score {
+		font-weight: rem(16);
+		font-weight: 500;
+	}
+
+	&__titleBox {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__textarea {
+		width: 100%;
+      height: em(110);
+		padding: rem(20);
+
+      resize: none;
+
+      
+      border: 1px solid $lightgreyColor;
+      border-radius: rem(5);
+
+		font-size: rem(14);
+		font-weight: 300;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(20);
+	}
+
+	&__title {
+		text-transform: uppercase;
+
+		font-size: rem(18);
+		font-weight: 700;
+	}
+
+	&__send {
+		width: 100%;
+	}
+
+	&__imageList, &__fileLoader {
+		justify-self: center;
+	}
+
+	
+}
+
+.FileLoader {
+	position: relative;
+
+	cursor: pointer;
+	&__wrapper {
+		display: inline-flex;
+		column-gap: rem(10);
+
+		transition: color $primaryTransition;
+
+		color: $accentColor;
+		&:hover {
+			color: $accentHoverColor
+		}	
+	}
+
+	&__add {
+		text-decoration: underline;
+
+		font-size: rem(14);
+	}
+
+	&__input {
+		position: absolute;
+		z-index: -1;
+
+		width: 0;
+		height: 0;
+
+		opacity: 0;
+	}
+}
+
+.Image {
+	position: relative;
+
+	width: rem(87);
+	height: rem(83.01);
+
+	&__this {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		width: rem(79);
+		height: rem(78.01);
+
+		border-radius: rem(10);
+		object-fit: cover;
+	}
+
+	&__wrapper {
+
+	}
+
+	&__button {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: rem(29);
+		height: rem(29);
+
+		border-radius: 50%;
+
+		background-color: $accentColor;
+	}
+
+	&__icon {
+		color: #fff;
+	}
+}
+
+.ImageList {
+	display: flex;
+
+	overflow-x: auto;
+	// justify-content: center;
+	max-width: rem(189 + 23);
+	column-gap: rem(23);
+
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	  scrollbar-width: none;
+
+	
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	
+	&__item {
+		flex: 0 0 auto;
+		scroll-snap-align: start;
+	}
+}

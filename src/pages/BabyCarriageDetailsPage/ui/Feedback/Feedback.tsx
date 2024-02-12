@@ -1,7 +1,7 @@
 import { FC, useMemo } from "react";
 import { ProductsFeedback } from "@/entities/BabyCarriageProductDetails";
+import StarIcon from "@/shared/assets/common/star.svg";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
-import StarIcon from "../../assets/star.svg";
 import cls from "./Feedback.module.scss";
 
 interface FeedbackProps {
@@ -56,7 +56,7 @@ export const Feedback: FC<FeedbackProps> = ({ className, data }) => {
 					{starsItems}
 				</div>
 			</div>
-			<p className={cls.Feedback__text}>Оказалась, очень удобной для малыша со скрытым копюшоном батискафом, для родителей лёгкой и маневренной. Ещё  немаловажными плюсами являются маленькими </p>
+			<p className={cls.Feedback__text}>{data.text}</p>
 			{data.images && (
 				<ul className={cls.ImagesButtonsList}>
 					{ImagesButtonsItems}

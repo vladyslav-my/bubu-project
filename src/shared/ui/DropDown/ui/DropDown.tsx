@@ -54,7 +54,7 @@ export const DropDown: FC<DropDownProps> = memo(({
 				</li>
 			);
 		}),
-		[onButtonClickHandler, value],
+		[onButtonClickHandler, options, value],
 	);
 
 	useEffect(() => {
@@ -73,7 +73,7 @@ export const DropDown: FC<DropDownProps> = memo(({
 			}, [className])}
 		>
 			<button className={cls.DropDown__summary} onClick={onButtonToggleClick}>
-				<h3 className={cls.DropDown__question}>{activeContent}</h3>
+				<h3 className={cls.DropDown__title}>{activeContent}</h3>
 				<ArrowIcon className={cls.DropDown__icon} />
 			</button>
 			<ul style={{ maxHeight }} ref={contentRef} className={cls.DropDown__content}>

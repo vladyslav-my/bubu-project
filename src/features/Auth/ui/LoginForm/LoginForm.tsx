@@ -16,7 +16,6 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
 	const username = useSelector(loginSelectors.getUsername);
 	const password = useSelector(loginSelectors.getPassword);
 	const onSubmit = useCallback((e: any) => {
-		console.log(1);
 		e.preventDefault();
 
 		// @ts-ignore
@@ -40,6 +39,7 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
 			title="Вхід"
 			submitButtonName="Увійти"
 			onSubmit={onSubmit}
+			toRegister
 		>
 			<AuthField
 				value={username.field}

@@ -1,0 +1,26 @@
+.Rating {
+	display: flex;
+	align-items: center;
+
+	> *:not(:last-child) {
+		padding-right: rem(5);
+	}
+
+	&__item {
+		width: rem(33.89);
+		height: rem(32.33);
+		stroke: $lightgreyColor;
+
+		transition: stroke $primaryTransition, fill $primaryTransition;
+
+		&_active {
+			fill: $accentColor;
+			stroke: $accentColor;
+		}
+
+		&_hover {
+			stroke: $accentHoverColor;
+			fill: $accentHoverColor;
+		}
+	}
+}

@@ -18,6 +18,9 @@
 	}
 
 	&_auth {
+		position: relative;
+
+		overflow: hidden;
 		#{$p} {
 			&__input {
 				padding: rem(20);
@@ -46,15 +49,28 @@
 					color: #fff;
 				}
 
-
-
 				&:focus {
 					border: 1px solid $lightgreyColor;
 				}
+			}	
+		}
+	}
 
-			}
+	&_modal {	
+		#{$p} {
+			&__input {
+				padding: rem(20);
 
-			
+				border: 1px solid $lightgreyColor;
+				border-radius: rem(5);
+				background: rgba(255, 255, 255, 0.15);
+
+				font-size: rem(14);
+				font-weight: 300;
+				&::placeholder {
+					color: $lightgreyColor;
+				}
+			}	
 		}
 	}
 
@@ -93,13 +109,18 @@
 	}
 
 	&_wrong {
+		padding-bottom: rem(40);
+
+		transition: padding-bottom $primaryTransition;
+
 		#{$p} {
 			&__input {
 				border: 1px solid $wrongColor;
 			}
 
 			&__wrong {
-				margin-top: rem(15);
+				bottom: 0;
+				left: rem(5);
 			}
 		}
 		
@@ -107,13 +128,12 @@
 
 
 	&__wrong {
-		// position: absolute;
+		position: absolute;
 		z-index: -1;
+		bottom: 100%;		
+		left: 0;
 
-		// margin-top: rem(-17);
-		margin-left: rem(2);
-
-		transition: margin-top $primaryTransition;
+		transition: bottom $primaryTransition;
 
 		color: $wrongColor;
 	}

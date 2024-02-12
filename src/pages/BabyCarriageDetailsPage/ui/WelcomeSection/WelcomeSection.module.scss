@@ -108,15 +108,17 @@
 	&__rating {
 		display: inline-flex;
 		align-items: center;
-		column-gap: rem(2);
+
+		color: $accentColor;
 
 		font-size: rem(20);
 		font-weight: 700;
+		column-gap: rem(2);
 	} 
 
 
 	&__ratingIcon {
-		fill: $accentColor;
+		fill: currentColor;
 
 		width: rem(19);
 		height: rem(18);

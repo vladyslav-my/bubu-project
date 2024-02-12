@@ -2,9 +2,9 @@ import { FC, ReactElement, useMemo } from "react";
 import { useMediaQuery } from "react-responsive";
 import { WriteFeedbackButton } from "@/features/Feedback";
 import { BabyCarriageData } from "@/entities/BabyCarriageProductDetails";
+import StarIcon from "@/shared/assets/common/star.svg";
 import { Devices } from "@/shared/const/devices";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
-import StarIcon from "../../assets/star.svg";
 import { Feedback } from "../Feedback/Feedback";
 import cls from "./Feedbacks.module.scss";
 
@@ -33,7 +33,6 @@ export const Feedbacks: FC<FeedbacksProps> = ({
 
 		data?.productsFeedback.list.forEach((data, i) => { //! Цей код можна декомпозувати в функції
 			const value = ++i;
-
 			if (!isContainer) {
 				if (value % 3 === 1) {
 					oneColumn.push(<Feedback data={data} />);

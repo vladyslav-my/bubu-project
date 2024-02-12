@@ -15,16 +15,32 @@
 		align-items: center;
 		justify-content: center;
 
-		width: rem(48);
-		height: rem(48);
+		width: em(48);
+		height: em(48);
 
 		transition: background-color $primaryTransition;
 
 		border-radius: 50%;
 		background-color: #fff;
-		box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 rem(2) rem(7) 0 rgba(0, 0, 0, 0.1);
 		&:hover {
 			background-color: $lightPurpleColor;
+		}
+
+		#{$p} {
+			&__icon {
+				width: em(20);
+				height: em(20);
+			}
+		}
+
+		@media (min-width: em($mobile)) {
+			font-size: rem(16);
+		}
+
+
+		@media (max-width: em($mobile)) {
+			font-size: rem(math.div(35, 3));
 		}
 	}
 

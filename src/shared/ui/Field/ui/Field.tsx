@@ -20,6 +20,7 @@ export enum FieldModifier {
 	DEFAULT = "Field_default",
 	AUTH = "Field_auth",
 	SEARCH = "Field_search",
+	MODAL = "Field_modal",
 }
 
 export const Field: FC<FieldProps> = memo(forwardRef(({

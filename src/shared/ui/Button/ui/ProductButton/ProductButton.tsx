@@ -9,6 +9,7 @@ interface ProductButtonProps {
 	modifier?: ProductButtonModifier;
 	isCart?: boolean;
 	children: ReactNode;
+	onClick: any;
 }
 
 export enum ProductButtonModifier {
@@ -21,10 +22,11 @@ export const ProductButton: FC<ProductButtonProps> = ({
 	className,
 	isCart,
 	children,
+	onClick,
 	modifier = ProductButtonModifier.FILL,
 }) => {
 	return (
-		<Button className={cn(cls.ProductButton, {}, [cls[modifier], className])}>
+		<Button className={cn(cls.ProductButton, {}, [cls[modifier], className])} onClick={onClick}>
 			{isCart && <CartIcon className={cls.ProductButton__icon} />}
 			{children}
 		</Button>
